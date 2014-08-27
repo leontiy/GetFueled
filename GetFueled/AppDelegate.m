@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "FoursquareApi.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[FoursquareApi sharedInstance] requestVenuesWithCompletion:^(NSArray *venues, NSError *error) {
+        NSLog(@"");
+    }];
     return YES;
 }
 							

@@ -21,6 +21,9 @@
 		359C882D19AE155000E67D29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880F19AE155000E67D29 /* UIKit.framework */; };
 		359C883519AE155000E67D29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 359C883319AE155000E67D29 /* InfoPlist.strings */; };
 		359C883719AE155000E67D29 /* GetFueledTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C883619AE155000E67D29 /* GetFueledTests.m */; };
+		359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C884119AE1BF800E67D29 /* FoursquareApi.m */; };
+		359C884B19AE24C600E67D29 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 359C884919AE24C600E67D29 /* Model.xcdatamodeld */; };
+		C48904CC9536449DAB3FED81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B7E247AA464F18847186E8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		359C883219AE155000E67D29 /* GetFueledTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GetFueledTests-Info.plist"; sourceTree = "<group>"; };
 		359C883419AE155000E67D29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		359C883619AE155000E67D29 /* GetFueledTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetFueledTests.m; sourceTree = "<group>"; };
+		359C884019AE1BF800E67D29 /* FoursquareApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoursquareApi.h; path = Network/FoursquareApi.h; sourceTree = "<group>"; };
+		359C884119AE1BF800E67D29 /* FoursquareApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoursquareApi.m; path = Network/FoursquareApi.m; sourceTree = "<group>"; };
+		359C884A19AE24C600E67D29 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3D83C1201FC64079903F2870 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		81B7E247AA464F18847186E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 				359C880E19AE155000E67D29 /* CoreGraphics.framework in Frameworks */,
 				359C881019AE155000E67D29 /* UIKit.framework in Frameworks */,
 				359C880C19AE155000E67D29 /* Foundation.framework in Frameworks */,
+				C48904CC9536449DAB3FED81 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +95,7 @@
 				359C883019AE155000E67D29 /* GetFueledTests */,
 				359C880A19AE155000E67D29 /* Frameworks */,
 				359C880919AE155000E67D29 /* Products */,
+				3D83C1201FC64079903F2870 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +115,7 @@
 				359C880D19AE155000E67D29 /* CoreGraphics.framework */,
 				359C880F19AE155000E67D29 /* UIKit.framework */,
 				359C882A19AE155000E67D29 /* XCTest.framework */,
+				81B7E247AA464F18847186E8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,8 +123,10 @@
 		359C881119AE155000E67D29 /* GetFueled */ = {
 			isa = PBXGroup;
 			children = (
+				359C884819AE24C600E67D29 /* Model */,
 				359C881A19AE155000E67D29 /* AppDelegate.h */,
 				359C881B19AE155000E67D29 /* AppDelegate.m */,
+				359C884319AE23D800E67D29 /* Networking */,
 				359C881D19AE155000E67D29 /* Main.storyboard */,
 				359C882019AE155000E67D29 /* ViewController.h */,
 				359C882119AE155000E67D29 /* ViewController.m */,
@@ -152,6 +165,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		359C884319AE23D800E67D29 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				359C884019AE1BF800E67D29 /* FoursquareApi.h */,
+				359C884119AE1BF800E67D29 /* FoursquareApi.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		359C884819AE24C600E67D29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				359C884919AE24C600E67D29 /* Model.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 359C883A19AE155000E67D29 /* Build configuration list for PBXNativeTarget "GetFueled" */;
 			buildPhases = (
+				23EB0FB9D9FE4BDC9FF0FF7F /* Check Pods Manifest.lock */,
 				359C880419AE155000E67D29 /* Sources */,
 				359C880519AE155000E67D29 /* Frameworks */,
 				359C880619AE155000E67D29 /* Resources */,
+				47AAD4B37EB14ECAAAA2742A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,12 +276,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23EB0FB9D9FE4BDC9FF0FF7F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		47AAD4B37EB14ECAAAA2742A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		359C880419AE155000E67D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
+				359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */,
+				359C884B19AE24C600E67D29 /* Model.xcdatamodeld in Sources */,
 				359C881C19AE155000E67D29 /* AppDelegate.m in Sources */,
 				359C881819AE155000E67D29 /* main.m in Sources */,
 			);
@@ -373,12 +440,14 @@
 		};
 		359C883B19AE155000E67D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D83C1201FC64079903F2870 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GetFueled/GetFueled-Prefix.pch";
 				INFOPLIST_FILE = "GetFueled/GetFueled-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -386,12 +455,14 @@
 		};
 		359C883C19AE155000E67D29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D83C1201FC64079903F2870 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GetFueled/GetFueled-Prefix.pch";
 				INFOPLIST_FILE = "GetFueled/GetFueled-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +527,7 @@
 				359C883C19AE155000E67D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		359C883D19AE155000E67D29 /* Build configuration list for PBXNativeTarget "GetFueledTests" */ = {
 			isa = XCConfigurationList;
@@ -464,8 +536,22 @@
 				359C883F19AE155000E67D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		359C884919AE24C600E67D29 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				359C884A19AE24C600E67D29 /* Model.xcdatamodel */,
+			);
+			currentVersion = 359C884A19AE24C600E67D29 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 359C880019AE155000E67D29 /* Project object */;
 }
