@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueTableViewCell.m */; };
+		358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 358B57BD19B390F300D1F626 /* Model.xcdatamodeld */; };
+		358B57C219B391F300D1F626 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C119B391F300D1F626 /* Venue.m */; };
+		358B57C519B3920100D1F626 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C419B3920100D1F626 /* _Venue.m */; };
 		359C880C19AE155000E67D29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880B19AE155000E67D29 /* Foundation.framework */; };
 		359C880E19AE155000E67D29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880D19AE155000E67D29 /* CoreGraphics.framework */; };
 		359C881019AE155000E67D29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880F19AE155000E67D29 /* UIKit.framework */; };
@@ -22,7 +26,6 @@
 		359C883519AE155000E67D29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 359C883319AE155000E67D29 /* InfoPlist.strings */; };
 		359C883719AE155000E67D29 /* GetFueledTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C883619AE155000E67D29 /* GetFueledTests.m */; };
 		359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C884119AE1BF800E67D29 /* FoursquareApi.m */; };
-		359C884B19AE24C600E67D29 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 359C884919AE24C600E67D29 /* Model.xcdatamodeld */; };
 		C48904CC9536449DAB3FED81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B7E247AA464F18847186E8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3554B4F719B239930075BB74 /* VenueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewCell.h; sourceTree = "<group>"; };
+		3554B4F819B239930075BB74 /* VenueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewCell.m; sourceTree = "<group>"; };
+		358B57BE19B390F300D1F626 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		358B57C019B391F300D1F626 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		358B57C119B391F300D1F626 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		358B57C319B3920100D1F626 /* _Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Venue.h; sourceTree = "<group>"; };
+		358B57C419B3920100D1F626 /* _Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Venue.m; sourceTree = "<group>"; };
 		359C880819AE155000E67D29 /* GetFueled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetFueled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359C880B19AE155000E67D29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359C880D19AE155000E67D29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,7 +68,6 @@
 		359C883619AE155000E67D29 /* GetFueledTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetFueledTests.m; sourceTree = "<group>"; };
 		359C884019AE1BF800E67D29 /* FoursquareApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoursquareApi.h; path = Network/FoursquareApi.h; sourceTree = "<group>"; };
 		359C884119AE1BF800E67D29 /* FoursquareApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoursquareApi.m; path = Network/FoursquareApi.m; sourceTree = "<group>"; };
-		359C884A19AE24C600E67D29 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3D83C1201FC64079903F2870 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		81B7E247AA464F18847186E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,9 +97,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3554B4F619B2393E0075BB74 /* Venues List */ = {
+			isa = PBXGroup;
+			children = (
+				3554B4F719B239930075BB74 /* VenueTableViewCell.h */,
+				3554B4F819B239930075BB74 /* VenueTableViewCell.m */,
+			);
+			path = "Venues List";
+			sourceTree = "<group>";
+		};
+		358B57B719B38B0300D1F626 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				358B57C019B391F300D1F626 /* Venue.h */,
+				358B57C119B391F300D1F626 /* Venue.m */,
+				358B57BD19B390F300D1F626 /* Model.xcdatamodeld */,
+				358B57B819B38B0300D1F626 /* GeneratedCode */,
+			);
+			name = Model;
+			path = GetFueled/Model;
+			sourceTree = "<group>";
+		};
+		358B57B819B38B0300D1F626 /* GeneratedCode */ = {
+			isa = PBXGroup;
+			children = (
+				358B57C319B3920100D1F626 /* _Venue.h */,
+				358B57C419B3920100D1F626 /* _Venue.m */,
+			);
+			path = GeneratedCode;
+			sourceTree = "<group>";
+		};
 		359C87FF19AE155000E67D29 = {
 			isa = PBXGroup;
 			children = (
+				358B57B719B38B0300D1F626 /* Model */,
 				359C881119AE155000E67D29 /* GetFueled */,
 				359C883019AE155000E67D29 /* GetFueledTests */,
 				359C880A19AE155000E67D29 /* Frameworks */,
@@ -123,7 +163,7 @@
 		359C881119AE155000E67D29 /* GetFueled */ = {
 			isa = PBXGroup;
 			children = (
-				359C884819AE24C600E67D29 /* Model */,
+				3554B4F619B2393E0075BB74 /* Venues List */,
 				359C881A19AE155000E67D29 /* AppDelegate.h */,
 				359C881B19AE155000E67D29 /* AppDelegate.m */,
 				359C884319AE23D800E67D29 /* Networking */,
@@ -174,14 +214,6 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		359C884819AE24C600E67D29 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				359C884919AE24C600E67D29 /* Model.xcdatamodeld */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,6 +222,7 @@
 			buildConfigurationList = 359C883A19AE155000E67D29 /* Build configuration list for PBXNativeTarget "GetFueled" */;
 			buildPhases = (
 				23EB0FB9D9FE4BDC9FF0FF7F /* Check Pods Manifest.lock */,
+				3554B4FA19B37E9C0075BB74 /* MOGenerator */,
 				359C880419AE155000E67D29 /* Sources */,
 				359C880519AE155000E67D29 /* Frameworks */,
 				359C880619AE155000E67D29 /* Resources */,
@@ -292,6 +325,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		3554B4FA19B37E9C0075BB74 /* MOGenerator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = MOGenerator;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd GetFueled/Model\n\nif [ `whereis mogenerator | sed 's/\\s\\n//g'` ]\nthen\n    echo \"note: Running mogenerator...\"\n    mogenerator --template-var arc=true --model Model.xcdatamodeld --machine-dir ./GeneratedCode --human-dir ./\nelse\n    echo \"warning: MOGenerator not installed; skipping code generation.\\n\\nInstall with \\\"brew install mogenerator\\\"\"\nfi";
+			showEnvVarsInLog = 0;
+		};
 		47AAD4B37EB14ECAAAA2742A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,10 +364,12 @@
 			files = (
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
 				359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */,
-				359C884B19AE24C600E67D29 /* Model.xcdatamodeld in Sources */,
+				358B57C219B391F300D1F626 /* Venue.m in Sources */,
 				359C881C19AE155000E67D29 /* AppDelegate.m in Sources */,
 				359C881819AE155000E67D29 /* main.m in Sources */,
+				358B57C519B3920100D1F626 /* _Venue.m in Sources */,
 				3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */,
+				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,12 +592,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		359C884919AE24C600E67D29 /* Model.xcdatamodeld */ = {
+		358B57BD19B390F300D1F626 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				359C884A19AE24C600E67D29 /* Model.xcdatamodel */,
+				358B57BE19B390F300D1F626 /* Model.xcdatamodel */,
 			);
-			currentVersion = 359C884A19AE24C600E67D29 /* Model.xcdatamodel */;
+			currentVersion = 358B57BE19B390F300D1F626 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
