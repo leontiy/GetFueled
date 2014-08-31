@@ -319,6 +319,7 @@
 				359C884B19AE24C600E67D29 /* Model.xcdatamodeld in Sources */,
 				359C881C19AE155000E67D29 /* AppDelegate.m in Sources */,
 				359C881819AE155000E67D29 /* main.m in Sources */,
+				3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
