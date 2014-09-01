@@ -4,19 +4,18 @@
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <relationship name="venue" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="checkins" inverseEntity="Venue" syncable="YES"/>
     </entity>
-    <entity name="CustomReview" syncable="YES">
+    <entity name="CustomReview" representedClassName="CustomReview" syncable="YES">
         <attribute name="rating" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="5" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="customReview" inverseEntity="Venue" syncable="YES"/>
     </entity>
-    <entity name="RecommendedItem" syncable="YES">
+    <entity name="RecommendedItem" representedClassName="RecommendedItem" syncable="YES">
         <attribute name="index" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="recommendedItem" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <entity name="Venue" representedClassName="Venue" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="blacklisted" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
-        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customRating" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="5" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -29,14 +28,21 @@
         <attribute name="priceTier" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="websiteUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VenueCategory" inverseName="venues" inverseEntity="VenueCategory" syncable="YES"/>
         <relationship name="checkins" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Checkin" inverseName="venue" inverseEntity="Checkin" syncable="YES"/>
         <relationship name="customReview" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CustomReview" inverseName="venue" inverseEntity="CustomReview" syncable="YES"/>
         <relationship name="recommendedItem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RecommendedItem" inverseName="venue" inverseEntity="RecommendedItem" syncable="YES"/>
+    </entity>
+    <entity name="VenueCategory" representedClassName="VenueCategory" syncable="YES">
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="venues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Venue" inverseName="categories" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <elements>
         <element name="Venue" positionX="-63" positionY="-18" width="128" height="313"/>
         <element name="CustomReview" positionX="-63" positionY="63" width="128" height="88"/>
         <element name="Checkin" positionX="-45" positionY="99" width="128" height="73"/>
         <element name="RecommendedItem" positionX="-36" positionY="117" width="128" height="73"/>
+        <element name="VenueCategory" positionX="-18" positionY="153" width="128" height="88"/>
     </elements>
 </model>

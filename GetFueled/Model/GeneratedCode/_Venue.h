@@ -7,7 +7,6 @@
 extern const struct VenueAttributes {
 	__unsafe_unretained NSString *address;
 	__unsafe_unretained NSString *blacklisted;
-	__unsafe_unretained NSString *category;
 	__unsafe_unretained NSString *customRating;
 	__unsafe_unretained NSString *id;
 	__unsafe_unretained NSString *latitude;
@@ -23,6 +22,7 @@ extern const struct VenueAttributes {
 } VenueAttributes;
 
 extern const struct VenueRelationships {
+	__unsafe_unretained NSString *categories;
 	__unsafe_unretained NSString *checkins;
 	__unsafe_unretained NSString *customReview;
 	__unsafe_unretained NSString *recommendedItem;
@@ -31,10 +31,10 @@ extern const struct VenueRelationships {
 extern const struct VenueFetchedProperties {
 } VenueFetchedProperties;
 
+@class VenueCategory;
 @class NSManagedObject;
-@class NSManagedObject;
-@class NSManagedObject;
-
+@class CustomReview;
+@class RecommendedItem;
 
 
 
@@ -83,16 +83,6 @@ extern const struct VenueFetchedProperties {
 - (void)setBlacklistedValue:(BOOL)value_;
 
 //- (BOOL)validateBlacklisted:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) NSString* category;
-
-
-
-//- (BOOL)validateCategory:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -238,6 +228,13 @@ extern const struct VenueFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSSet *categories;
+
+- (NSMutableSet*)categoriesSet;
+
+
+
+
 @property (nonatomic, strong) NSSet *checkins;
 
 - (NSMutableSet*)checkinsSet;
@@ -245,14 +242,14 @@ extern const struct VenueFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSManagedObject *customReview;
+@property (nonatomic, strong) CustomReview *customReview;
 
 //- (BOOL)validateCustomReview:(id*)value_ error:(NSError**)error_;
 
 
 
 
-@property (nonatomic, strong) NSManagedObject *recommendedItem;
+@property (nonatomic, strong) RecommendedItem *recommendedItem;
 
 //- (BOOL)validateRecommendedItem:(id*)value_ error:(NSError**)error_;
 
@@ -263,6 +260,11 @@ extern const struct VenueFetchedProperties {
 @end
 
 @interface _Venue (CoreDataGeneratedAccessors)
+
+- (void)addCategories:(NSSet*)value_;
+- (void)removeCategories:(NSSet*)value_;
+- (void)addCategoriesObject:(VenueCategory*)value_;
+- (void)removeCategoriesObject:(VenueCategory*)value_;
 
 - (void)addCheckins:(NSSet*)value_;
 - (void)removeCheckins:(NSSet*)value_;
@@ -285,12 +287,6 @@ extern const struct VenueFetchedProperties {
 
 - (BOOL)primitiveBlacklistedValue;
 - (void)setPrimitiveBlacklistedValue:(BOOL)value_;
-
-
-
-
-- (NSString*)primitiveCategory;
-- (void)setPrimitiveCategory:(NSString*)value;
 
 
 
@@ -383,18 +379,23 @@ extern const struct VenueFetchedProperties {
 
 
 
+- (NSMutableSet*)primitiveCategories;
+- (void)setPrimitiveCategories:(NSMutableSet*)value;
+
+
+
 - (NSMutableSet*)primitiveCheckins;
 - (void)setPrimitiveCheckins:(NSMutableSet*)value;
 
 
 
-- (NSManagedObject*)primitiveCustomReview;
-- (void)setPrimitiveCustomReview:(NSManagedObject*)value;
+- (CustomReview*)primitiveCustomReview;
+- (void)setPrimitiveCustomReview:(CustomReview*)value;
 
 
 
-- (NSManagedObject*)primitiveRecommendedItem;
-- (void)setPrimitiveRecommendedItem:(NSManagedObject*)value;
+- (RecommendedItem*)primitiveRecommendedItem;
+- (void)setPrimitiveRecommendedItem:(RecommendedItem*)value;
 
 
 @end

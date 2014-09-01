@@ -96,7 +96,7 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
 - (RKEntityMapping *)venueMapping {
     RKEntityMapping * venueMapping = [RKEntityMapping mappingForEntityForName:@"Venue"
                                                          inManagedObjectStore:self.objectManager.managedObjectStore];
-    venueMapping.identificationAttributes = @[@"id"];
+    venueMapping.identificationAttributes = @[ @"id" ];
     NSDictionary *mapping = @{
                               @"id" : @"id",
                               @"name" : @"name",
@@ -109,19 +109,20 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
                               @"url" : @"websiteUrl",
                               };
     [venueMapping addAttributeMappingsFromDictionary:mapping];
-
-//    // category mapping (read from end to start)
-//    RKObjectMapping *stringMapping = [RKObjectMapping mappingForClass:[NSString class]];
-//    [stringMapping add]
-//    RKDynamicMapping *categoryDynamicMapping = [RKDynamicMapping new];
-//    [categoryDynamicMapping addMatcher:[RKObjectMappingMatcher matcherWithKeyPath:@"primary"
-//                                                                    expectedValue:@YES
-//                                                                    objectMapping:stringMapping]];
-//    RKRelationshipMapping *categoryPropMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"categories"
-//                                                                                             toKeyPath:@"category"
-//                                                                                           withMapping:categoryDynamicMapping];
-//    [venueMapping addPropertyMapping:categoryPropMapping];
+    [venueMapping addRelationshipMappingWithSourceKeyPath:@"categories" mapping:[self categoryMapping]];
     return venueMapping;
+}
+
+- (RKEntityMapping *)categoryMapping {
+    RKEntityMapping *categoryMapping = [RKEntityMapping mappingForEntityForName:@"VenueCategory"
+                                                           inManagedObjectStore:self.objectManager.managedObjectStore];
+    categoryMapping.identificationAttributes = @[ @"id" ];
+    NSDictionary *mapping = @{
+                              @"id" : @"id",
+                              @"name" : @"name",
+                              };
+    [categoryMapping addAttributeMappingsFromDictionary:mapping];
+    return categoryMapping;
 }
 
 - (RKObjectMapping *)groupMapping {
@@ -157,13 +158,9 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
                                          NSInteger count = [mappingResult.dictionary[@"response"][@"totalResults"] integerValue];
                                          NSArray *groups = mappingResult.dictionary[@"response.groups"];
                                          // TODO: delete redundant mappings: I can filter the venues before mapping any entities
-                                         NSArray *venues = [[[groups rx_mapWithBlock:^id(NSDictionary *group) {
-                                             return [group valueForKeyPath:@"items.venue"];
-                                         }] rx_foldInitialValue:[NSMutableArray array] block:^id(id memo, id next) {
-                                             [memo addObjectsFromArray:next];
-                                             return memo;
-                                         }] copy];
-                                         completion(venues, count, nil);
+                                         [self handleResponseWithGroups:groups
+                                                                  count:count
+                                                             completion:completion];
                                      }
                                  }
                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
@@ -171,6 +168,19 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
                                          completion(nil, 0, error);
                                      }
                                  }];
+}
+
+- (void)handleResponseWithGroups:(NSArray *)groups
+                           count:(NSInteger)count
+                      completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion
+{
+    NSArray *venues = [[[groups rx_mapWithBlock:^id(NSDictionary *group) {
+        return [group valueForKeyPath:@"items.venue"];
+    }] rx_foldInitialValue:[NSMutableArray array] block:^id(id memo, id next) {
+        [memo addObjectsFromArray:next];
+        return memo;
+    }] copy];
+    completion(venues, count, nil);
 }
 
 @end

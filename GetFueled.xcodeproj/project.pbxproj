@@ -12,6 +12,12 @@
 		358B57C219B391F300D1F626 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C119B391F300D1F626 /* Venue.m */; };
 		358B57C519B3920100D1F626 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C419B3920100D1F626 /* _Venue.m */; };
 		358B57C819B395BA00D1F626 /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C719B395BA00D1F626 /* DataProvider.m */; };
+		358B57D219B50CE300D1F626 /* CustomReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57CD19B50CE300D1F626 /* CustomReview.m */; };
+		358B57D319B50CE300D1F626 /* RecommendedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57CF19B50CE300D1F626 /* RecommendedItem.m */; };
+		358B57D419B50CE300D1F626 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D119B50CE300D1F626 /* VenueCategory.m */; };
+		358B57DB19B50CF000D1F626 /* _CustomReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D619B50CF000D1F626 /* _CustomReview.m */; };
+		358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D819B50CF000D1F626 /* _RecommendedItem.m */; };
+		358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57DA19B50CF000D1F626 /* _VenueCategory.m */; };
 		359C880C19AE155000E67D29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880B19AE155000E67D29 /* Foundation.framework */; };
 		359C880E19AE155000E67D29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880D19AE155000E67D29 /* CoreGraphics.framework */; };
 		359C881019AE155000E67D29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880F19AE155000E67D29 /* UIKit.framework */; };
@@ -50,6 +56,18 @@
 		358B57C419B3920100D1F626 /* _Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Venue.m; sourceTree = "<group>"; };
 		358B57C619B395BA00D1F626 /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataProvider.h; path = Network/DataProvider.h; sourceTree = "<group>"; };
 		358B57C719B395BA00D1F626 /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataProvider.m; path = Network/DataProvider.m; sourceTree = "<group>"; };
+		358B57CC19B50CE300D1F626 /* CustomReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomReview.h; sourceTree = "<group>"; };
+		358B57CD19B50CE300D1F626 /* CustomReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomReview.m; sourceTree = "<group>"; };
+		358B57CE19B50CE300D1F626 /* RecommendedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendedItem.h; sourceTree = "<group>"; };
+		358B57CF19B50CE300D1F626 /* RecommendedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendedItem.m; sourceTree = "<group>"; };
+		358B57D019B50CE300D1F626 /* VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCategory.h; sourceTree = "<group>"; };
+		358B57D119B50CE300D1F626 /* VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCategory.m; sourceTree = "<group>"; };
+		358B57D519B50CF000D1F626 /* _CustomReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CustomReview.h; sourceTree = "<group>"; };
+		358B57D619B50CF000D1F626 /* _CustomReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CustomReview.m; sourceTree = "<group>"; };
+		358B57D719B50CF000D1F626 /* _RecommendedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _RecommendedItem.h; sourceTree = "<group>"; };
+		358B57D819B50CF000D1F626 /* _RecommendedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RecommendedItem.m; sourceTree = "<group>"; };
+		358B57D919B50CF000D1F626 /* _VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _VenueCategory.h; sourceTree = "<group>"; };
+		358B57DA19B50CF000D1F626 /* _VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _VenueCategory.m; sourceTree = "<group>"; };
 		359C880819AE155000E67D29 /* GetFueled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetFueled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359C880B19AE155000E67D29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359C880D19AE155000E67D29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +130,12 @@
 		358B57B719B38B0300D1F626 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				358B57CC19B50CE300D1F626 /* CustomReview.h */,
+				358B57CD19B50CE300D1F626 /* CustomReview.m */,
+				358B57CE19B50CE300D1F626 /* RecommendedItem.h */,
+				358B57CF19B50CE300D1F626 /* RecommendedItem.m */,
+				358B57D019B50CE300D1F626 /* VenueCategory.h */,
+				358B57D119B50CE300D1F626 /* VenueCategory.m */,
 				358B57C019B391F300D1F626 /* Venue.h */,
 				358B57C119B391F300D1F626 /* Venue.m */,
 				358B57BD19B390F300D1F626 /* Model.xcdatamodeld */,
@@ -123,6 +147,12 @@
 		358B57B819B38B0300D1F626 /* GeneratedCode */ = {
 			isa = PBXGroup;
 			children = (
+				358B57D519B50CF000D1F626 /* _CustomReview.h */,
+				358B57D619B50CF000D1F626 /* _CustomReview.m */,
+				358B57D719B50CF000D1F626 /* _RecommendedItem.h */,
+				358B57D819B50CF000D1F626 /* _RecommendedItem.m */,
+				358B57D919B50CF000D1F626 /* _VenueCategory.h */,
+				358B57DA19B50CF000D1F626 /* _VenueCategory.m */,
 				358B57C319B3920100D1F626 /* _Venue.h */,
 				358B57C419B3920100D1F626 /* _Venue.m */,
 			);
@@ -366,11 +396,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */,
+				358B57D219B50CE300D1F626 /* CustomReview.m in Sources */,
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
+				358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */,
 				359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */,
 				358B57C219B391F300D1F626 /* Venue.m in Sources */,
 				359C881C19AE155000E67D29 /* AppDelegate.m in Sources */,
+				358B57D319B50CE300D1F626 /* RecommendedItem.m in Sources */,
+				358B57DB19B50CF000D1F626 /* _CustomReview.m in Sources */,
 				359C881819AE155000E67D29 /* main.m in Sources */,
+				358B57D419B50CE300D1F626 /* VenueCategory.m in Sources */,
 				358B57C519B3920100D1F626 /* _Venue.m in Sources */,
 				3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */,
 				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,

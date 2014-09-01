@@ -35,6 +35,9 @@ static NSInteger kPageSize = 10;
 - (void)refresh {
     [[FoursquareApi sharedInstance] requestVenuesWithLimit:0 offset:kPageSize completion:^(NSArray *venues, NSInteger totalResults, NSError *error) {
         if (error == nil) {
+            
+            // TODO: (Re)Create recommended items
+            
             [self.requester dataPoviderDidRefresh:self];
         } else {
             [self.requester dataPovider:self didFailToFetchDataWithError:error];

@@ -6,7 +6,6 @@
 const struct VenueAttributes VenueAttributes = {
 	.address = @"address",
 	.blacklisted = @"blacklisted",
-	.category = @"category",
 	.customRating = @"customRating",
 	.id = @"id",
 	.latitude = @"latitude",
@@ -22,6 +21,7 @@ const struct VenueAttributes VenueAttributes = {
 };
 
 const struct VenueRelationships VenueRelationships = {
+	.categories = @"categories",
 	.checkins = @"checkins",
 	.customReview = @"customReview",
 	.recommendedItem = @"recommendedItem",
@@ -121,13 +121,6 @@ const struct VenueFetchedProperties VenueFetchedProperties = {
 - (void)setPrimitiveBlacklistedValue:(BOOL)value_ {
 	[self setPrimitiveBlacklisted:[NSNumber numberWithBool:value_]];
 }
-
-
-
-
-
-@dynamic category;
-
 
 
 
@@ -311,6 +304,19 @@ const struct VenueFetchedProperties VenueFetchedProperties = {
 
 
 
+
+@dynamic categories;
+
+	
+- (NSMutableSet*)categoriesSet {
+	[self willAccessValueForKey:@"categories"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"categories"];
+  
+	[self didAccessValueForKey:@"categories"];
+	return result;
+}
+	
 
 @dynamic checkins;
 
