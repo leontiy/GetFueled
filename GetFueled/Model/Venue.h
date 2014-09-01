@@ -1,5 +1,9 @@
 #import "_Venue.h"
 
+@import CoreLocation;
+
 @interface Venue : _Venue {}
-// Custom logic goes here.
+
+@property (nonatomic) CLLocationCoordinate2D location;
+
 @end

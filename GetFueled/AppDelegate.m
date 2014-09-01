@@ -13,8 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[FoursquareApi sharedInstance] requestVenuesWithCompletion:^(NSArray *venues, NSError *error) {
-        NSLog(@"");
+    [[FoursquareApi sharedInstance] requestVenuesWithLimit:10 offset:0 completion:^(NSArray *venues, NSInteger totalResults, NSError *error) {
+        NSLog(@"%@ object: %@", @(totalResults), venues);
     }];
     return YES;
 }

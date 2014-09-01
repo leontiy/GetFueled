@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_RKValueTransformers 1
 #define COCOAPODS_VERSION_PATCH_RKValueTransformers 0
 
+// RXCollections
+#define COCOAPODS_POD_AVAILABLE_RXCollections
+#define COCOAPODS_VERSION_MAJOR_RXCollections 1
+#define COCOAPODS_VERSION_MINOR_RXCollections 0
+#define COCOAPODS_VERSION_PATCH_RXCollections 0
+
 // RestKit
 #define COCOAPODS_POD_AVAILABLE_RestKit
 #define COCOAPODS_VERSION_MAJOR_RestKit 0

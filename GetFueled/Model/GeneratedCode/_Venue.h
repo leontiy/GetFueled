@@ -5,15 +5,47 @@
 
 
 extern const struct VenueAttributes {
+	__unsafe_unretained NSString *address;
+	__unsafe_unretained NSString *blacklisted;
+	__unsafe_unretained NSString *category;
+	__unsafe_unretained NSString *customRating;
 	__unsafe_unretained NSString *id;
+	__unsafe_unretained NSString *latitude;
+	__unsafe_unretained NSString *longitude;
+	__unsafe_unretained NSString *menuUrl;
 	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *openHorus;
+	__unsafe_unretained NSString *openNow;
+	__unsafe_unretained NSString *phone;
+	__unsafe_unretained NSString *priceTier;
+	__unsafe_unretained NSString *rating;
+	__unsafe_unretained NSString *websiteUrl;
 } VenueAttributes;
 
 extern const struct VenueRelationships {
+	__unsafe_unretained NSString *checkins;
+	__unsafe_unretained NSString *customReview;
+	__unsafe_unretained NSString *recommendedItem;
 } VenueRelationships;
 
 extern const struct VenueFetchedProperties {
 } VenueFetchedProperties;
+
+@class NSManagedObject;
+@class NSManagedObject;
+@class NSManagedObject;
+
+
+
+
+
+
+
+
+
+
+@class NSObject;
+
 
 
 
@@ -32,11 +64,97 @@ extern const struct VenueFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSString* address;
+
+
+
+//- (BOOL)validateAddress:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* blacklisted;
+
+
+
+@property BOOL blacklistedValue;
+- (BOOL)blacklistedValue;
+- (void)setBlacklistedValue:(BOOL)value_;
+
+//- (BOOL)validateBlacklisted:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* category;
+
+
+
+//- (BOOL)validateCategory:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* customRating;
+
+
+
+@property int16_t customRatingValue;
+- (int16_t)customRatingValue;
+- (void)setCustomRatingValue:(int16_t)value_;
+
+//- (BOOL)validateCustomRating:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
 @property (nonatomic, strong) NSString* id;
 
 
 
 //- (BOOL)validateId:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* latitude;
+
+
+
+@property double latitudeValue;
+- (double)latitudeValue;
+- (void)setLatitudeValue:(double)value_;
+
+//- (BOOL)validateLatitude:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* longitude;
+
+
+
+@property double longitudeValue;
+- (double)longitudeValue;
+- (void)setLongitudeValue:(double)value_;
+
+//- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* menuUrl;
+
+
+
+//- (BOOL)validateMenuUrl:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -52,14 +170,138 @@ extern const struct VenueFetchedProperties {
 
 
 
+@property (nonatomic, strong) id openHorus;
+
+
+
+//- (BOOL)validateOpenHorus:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* openNow;
+
+
+
+//- (BOOL)validateOpenNow:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* phone;
+
+
+
+//- (BOOL)validatePhone:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* priceTier;
+
+
+
+@property int16_t priceTierValue;
+- (int16_t)priceTierValue;
+- (void)setPriceTierValue:(int16_t)value_;
+
+//- (BOOL)validatePriceTier:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* rating;
+
+
+
+@property float ratingValue;
+- (float)ratingValue;
+- (void)setRatingValue:(float)value_;
+
+//- (BOOL)validateRating:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* websiteUrl;
+
+
+
+//- (BOOL)validateWebsiteUrl:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSSet *checkins;
+
+- (NSMutableSet*)checkinsSet;
+
+
+
+
+@property (nonatomic, strong) NSManagedObject *customReview;
+
+//- (BOOL)validateCustomReview:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSManagedObject *recommendedItem;
+
+//- (BOOL)validateRecommendedItem:(id*)value_ error:(NSError**)error_;
+
+
+
+
 
 @end
 
 @interface _Venue (CoreDataGeneratedAccessors)
 
+- (void)addCheckins:(NSSet*)value_;
+- (void)removeCheckins:(NSSet*)value_;
+- (void)addCheckinsObject:(NSManagedObject*)value_;
+- (void)removeCheckinsObject:(NSManagedObject*)value_;
+
 @end
 
 @interface _Venue (CoreDataGeneratedPrimitiveAccessors)
+
+
+- (NSString*)primitiveAddress;
+- (void)setPrimitiveAddress:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitiveBlacklisted;
+- (void)setPrimitiveBlacklisted:(NSNumber*)value;
+
+- (BOOL)primitiveBlacklistedValue;
+- (void)setPrimitiveBlacklistedValue:(BOOL)value_;
+
+
+
+
+- (NSString*)primitiveCategory;
+- (void)setPrimitiveCategory:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitiveCustomRating;
+- (void)setPrimitiveCustomRating:(NSNumber*)value;
+
+- (int16_t)primitiveCustomRatingValue;
+- (void)setPrimitiveCustomRatingValue:(int16_t)value_;
+
+
 
 
 - (NSString*)primitiveId;
@@ -68,10 +310,91 @@ extern const struct VenueFetchedProperties {
 
 
 
+- (NSNumber*)primitiveLatitude;
+- (void)setPrimitiveLatitude:(NSNumber*)value;
+
+- (double)primitiveLatitudeValue;
+- (void)setPrimitiveLatitudeValue:(double)value_;
+
+
+
+
+- (NSNumber*)primitiveLongitude;
+- (void)setPrimitiveLongitude:(NSNumber*)value;
+
+- (double)primitiveLongitudeValue;
+- (void)setPrimitiveLongitudeValue:(double)value_;
+
+
+
+
+- (NSString*)primitiveMenuUrl;
+- (void)setPrimitiveMenuUrl:(NSString*)value;
+
+
+
+
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
 
 
+
+
+- (id)primitiveOpenHorus;
+- (void)setPrimitiveOpenHorus:(id)value;
+
+
+
+
+- (NSString*)primitiveOpenNow;
+- (void)setPrimitiveOpenNow:(NSString*)value;
+
+
+
+
+- (NSString*)primitivePhone;
+- (void)setPrimitivePhone:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitivePriceTier;
+- (void)setPrimitivePriceTier:(NSNumber*)value;
+
+- (int16_t)primitivePriceTierValue;
+- (void)setPrimitivePriceTierValue:(int16_t)value_;
+
+
+
+
+- (NSNumber*)primitiveRating;
+- (void)setPrimitiveRating:(NSNumber*)value;
+
+- (float)primitiveRatingValue;
+- (void)setPrimitiveRatingValue:(float)value_;
+
+
+
+
+- (NSString*)primitiveWebsiteUrl;
+- (void)setPrimitiveWebsiteUrl:(NSString*)value;
+
+
+
+
+
+- (NSMutableSet*)primitiveCheckins;
+- (void)setPrimitiveCheckins:(NSMutableSet*)value;
+
+
+
+- (NSManagedObject*)primitiveCustomReview;
+- (void)setPrimitiveCustomReview:(NSManagedObject*)value;
+
+
+
+- (NSManagedObject*)primitiveRecommendedItem;
+- (void)setPrimitiveRecommendedItem:(NSManagedObject*)value;
 
 
 @end

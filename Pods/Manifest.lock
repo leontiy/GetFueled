@@ -22,17 +22,20 @@ PODS:
   - RestKit/Support (0.23.3):
     - TransitionKit (= 2.1.0)
   - RKValueTransformers (1.1.0)
+  - RXCollections (1.0)
   - SOCKit (1.1)
   - TransitionKit (2.1.0)
 
 DEPENDENCIES:
   - RestKit (~> 0.23)
+  - RXCollections (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
   RestKit: 193a35cddae5198388977abaedad129f8acb978b
   RKValueTransformers: b705e7b4651b9206b94600408462b74554bba969
+  RXCollections: 96cbe2ebea1a3b5ab8ca7a50f4296fb7fa05adc1
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
 

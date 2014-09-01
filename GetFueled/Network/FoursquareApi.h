@@ -12,6 +12,8 @@
 
 + (instancetype)sharedInstance;
 
-- (void)requestVenuesWithCompletion:(void(^)(NSArray *venues, NSError *error))completion;
+- (void)requestVenuesWithLimit:(NSInteger)limit
+                        offset:(NSInteger)offset
+                    completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion;
 
 @end
