@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A329f" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A343f" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Checkin" syncable="YES">
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <relationship name="venue" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="checkins" inverseEntity="Venue" syncable="YES"/>
@@ -25,6 +25,8 @@
         <attribute name="openHorus" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="openNow" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoUrlPrefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoUrlSuffix" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priceTier" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="websiteUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -39,10 +41,10 @@
         <relationship name="venues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Venue" inverseName="categories" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Venue" positionX="-63" positionY="-18" width="128" height="313"/>
-        <element name="CustomReview" positionX="-63" positionY="63" width="128" height="88"/>
         <element name="Checkin" positionX="-45" positionY="99" width="128" height="73"/>
+        <element name="CustomReview" positionX="-63" positionY="63" width="128" height="88"/>
         <element name="RecommendedItem" positionX="-36" positionY="117" width="128" height="73"/>
+        <element name="Venue" positionX="-63" positionY="-18" width="128" height="345"/>
         <element name="VenueCategory" positionX="-18" positionY="153" width="128" height="88"/>
     </elements>
 </model>

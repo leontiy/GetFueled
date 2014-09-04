@@ -6,4 +6,7 @@
 
 @property (nonatomic) CLLocationCoordinate2D location;
 
+@property (nonatomic, strong) NSArray *photoUrlPrefixes;
+@property (nonatomic, strong) NSArray *photoUrlSuffixes;
+
 @end

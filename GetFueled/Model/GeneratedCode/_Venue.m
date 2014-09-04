@@ -15,6 +15,8 @@ const struct VenueAttributes VenueAttributes = {
 	.openHorus = @"openHorus",
 	.openNow = @"openNow",
 	.phone = @"phone",
+	.photoUrlPrefix = @"photoUrlPrefix",
+	.photoUrlSuffix = @"photoUrlSuffix",
 	.priceTier = @"priceTier",
 	.rating = @"rating",
 	.websiteUrl = @"websiteUrl",
@@ -240,6 +242,20 @@ const struct VenueFetchedProperties VenueFetchedProperties = {
 
 
 @dynamic phone;
+
+
+
+
+
+
+@dynamic photoUrlPrefix;
+
+
+
+
+
+
+@dynamic photoUrlSuffix;
 
 
 

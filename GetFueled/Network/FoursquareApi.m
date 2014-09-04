@@ -107,6 +107,8 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
                               @"menu.mobileUrl" : @"menuUrl",
                               @"hours.status" : @"openNow",
                               @"url" : @"websiteUrl",
+                              @"featuredPhotos.items.prefix" : @"photoUrlPrefixes",
+                              @"featuredPhotos.items.suffix" : @"photoUrlSuffixes",
                               };
     [venueMapping addAttributeMappingsFromDictionary:mapping];
     [venueMapping addRelationshipMappingWithSourceKeyPath:@"categories" mapping:[self categoryMapping]];
@@ -180,7 +182,9 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
         [memo addObjectsFromArray:next];
         return memo;
     }] copy];
-    completion(venues, count, nil);
+    if (completion) {
+        completion(venues, count, nil);
+    }
 }
 
 @end

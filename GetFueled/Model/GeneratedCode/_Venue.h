@@ -16,6 +16,8 @@ extern const struct VenueAttributes {
 	__unsafe_unretained NSString *openHorus;
 	__unsafe_unretained NSString *openNow;
 	__unsafe_unretained NSString *phone;
+	__unsafe_unretained NSString *photoUrlPrefix;
+	__unsafe_unretained NSString *photoUrlSuffix;
 	__unsafe_unretained NSString *priceTier;
 	__unsafe_unretained NSString *rating;
 	__unsafe_unretained NSString *websiteUrl;
@@ -45,6 +47,8 @@ extern const struct VenueFetchedProperties {
 
 
 @class NSObject;
+
+
 
 
 
@@ -185,6 +189,26 @@ extern const struct VenueFetchedProperties {
 
 
 //- (BOOL)validatePhone:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* photoUrlPrefix;
+
+
+
+//- (BOOL)validatePhotoUrlPrefix:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* photoUrlSuffix;
+
+
+
+//- (BOOL)validatePhotoUrlSuffix:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -350,6 +374,18 @@ extern const struct VenueFetchedProperties {
 
 - (NSString*)primitivePhone;
 - (void)setPrimitivePhone:(NSString*)value;
+
+
+
+
+- (NSString*)primitivePhotoUrlPrefix;
+- (void)setPrimitivePhotoUrlPrefix:(NSString*)value;
+
+
+
+
+- (NSString*)primitivePhotoUrlSuffix;
+- (void)setPrimitivePhotoUrlSuffix:(NSString*)value;
 
 
 
