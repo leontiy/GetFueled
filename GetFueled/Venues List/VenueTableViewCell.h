@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Venue;
+
 @interface VenueTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) id representedObject;
+@property (nonatomic, strong) Venue *representedObject;
 
 @end

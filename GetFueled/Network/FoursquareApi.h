@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+
+@class RKManagedObjectStore;
+
+
 @interface FoursquareApi : NSObject
 
-+ (instancetype)sharedInstance;
-
-- (void)requestVenuesWithLimit:(NSInteger)limit
-                        offset:(NSInteger)offset
+- (instancetype)initWithDataStore:(RKManagedObjectStore*)store;
+- (void)requestVenuesWithOffset:(NSInteger)offset
+                        limit:(NSInteger)limit
                     completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion;
 
 @end

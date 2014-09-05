@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueTableViewCell.m */; };
+		35722E0E19B9CC3100506522 /* VenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35722E0D19B9CC3100506522 /* VenuesTableViewController.m */; };
 		358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 358B57BD19B390F300D1F626 /* Model.xcdatamodeld */; };
 		358B57C219B391F300D1F626 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C119B391F300D1F626 /* Venue.m */; };
 		358B57C519B3920100D1F626 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C419B3920100D1F626 /* _Venue.m */; };
-		358B57C819B395BA00D1F626 /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C719B395BA00D1F626 /* DataProvider.m */; };
+		358B57C819B395BA00D1F626 /* ModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C719B395BA00D1F626 /* ModelManager.m */; };
 		358B57D219B50CE300D1F626 /* CustomReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57CD19B50CE300D1F626 /* CustomReview.m */; };
 		358B57D319B50CE300D1F626 /* RecommendedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57CF19B50CE300D1F626 /* RecommendedItem.m */; };
 		358B57D419B50CE300D1F626 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D119B50CE300D1F626 /* VenueCategory.m */; };
@@ -49,13 +50,15 @@
 /* Begin PBXFileReference section */
 		3554B4F719B239930075BB74 /* VenueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewCell.h; sourceTree = "<group>"; };
 		3554B4F819B239930075BB74 /* VenueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewCell.m; sourceTree = "<group>"; };
+		35722E0C19B9CC3100506522 /* VenuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesTableViewController.h; sourceTree = "<group>"; };
+		35722E0D19B9CC3100506522 /* VenuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewController.m; sourceTree = "<group>"; };
 		358B57BE19B390F300D1F626 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		358B57C019B391F300D1F626 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		358B57C119B391F300D1F626 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		358B57C319B3920100D1F626 /* _Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Venue.h; sourceTree = "<group>"; };
 		358B57C419B3920100D1F626 /* _Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Venue.m; sourceTree = "<group>"; };
-		358B57C619B395BA00D1F626 /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataProvider.h; path = Network/DataProvider.h; sourceTree = "<group>"; };
-		358B57C719B395BA00D1F626 /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataProvider.m; path = Network/DataProvider.m; sourceTree = "<group>"; };
+		358B57C619B395BA00D1F626 /* ModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelManager.h; path = Network/ModelManager.h; sourceTree = "<group>"; };
+		358B57C719B395BA00D1F626 /* ModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelManager.m; path = Network/ModelManager.m; sourceTree = "<group>"; };
 		358B57CC19B50CE300D1F626 /* CustomReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomReview.h; sourceTree = "<group>"; };
 		358B57CD19B50CE300D1F626 /* CustomReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomReview.m; sourceTree = "<group>"; };
 		358B57CE19B50CE300D1F626 /* RecommendedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendedItem.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 			children = (
 				3554B4F719B239930075BB74 /* VenueTableViewCell.h */,
 				3554B4F819B239930075BB74 /* VenueTableViewCell.m */,
+				35722E0C19B9CC3100506522 /* VenuesTableViewController.h */,
+				35722E0D19B9CC3100506522 /* VenuesTableViewController.m */,
 			);
 			path = "Venues List";
 			sourceTree = "<group>";
@@ -242,8 +247,8 @@
 			children = (
 				359C884019AE1BF800E67D29 /* FoursquareApi.h */,
 				359C884119AE1BF800E67D29 /* FoursquareApi.m */,
-				358B57C619B395BA00D1F626 /* DataProvider.h */,
-				358B57C719B395BA00D1F626 /* DataProvider.m */,
+				358B57C619B395BA00D1F626 /* ModelManager.h */,
+				358B57C719B395BA00D1F626 /* ModelManager.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */,
 				358B57D219B50CE300D1F626 /* CustomReview.m in Sources */,
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
+				35722E0E19B9CC3100506522 /* VenuesTableViewController.m in Sources */,
 				358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */,
 				359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */,
 				358B57C219B391F300D1F626 /* Venue.m in Sources */,
@@ -410,7 +416,7 @@
 				358B57C519B3920100D1F626 /* _Venue.m in Sources */,
 				3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */,
 				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,
-				358B57C819B395BA00D1F626 /* DataProvider.m in Sources */,
+				358B57C819B395BA00D1F626 /* ModelManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

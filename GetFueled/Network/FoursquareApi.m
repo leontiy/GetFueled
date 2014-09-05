@@ -22,21 +22,12 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
 
 @implementation FoursquareApi
 
-+ (instancetype)sharedInstance {
-    static FoursquareApi *instance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [FoursquareApi new];
-    });
-    return instance;
-}
-
-- (instancetype)init {
+- (instancetype)initWithDataStore:(RKManagedObjectStore*)store {
     self = [super init];
     if (self) {
         NSURL *baseUrl = [NSURL URLWithString:@"https://api.foursquare.com/v2/"];
         self.objectManager = [RKObjectManager managerWithBaseURL:baseUrl];
-        self.objectManager.managedObjectStore = [self configureCoreDataStack];
+        self.objectManager.managedObjectStore = store;
         RKResponseDescriptor *responseObjectDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[self responseMapping]
                                                                                                       method:RKRequestMethodGET
                                                                                                  pathPattern:kVenuesExplorePath
@@ -51,40 +42,6 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
         [self.objectManager addResponseDescriptor:rd];
     }
     return self;
-}
-
-- (RKManagedObjectStore *)configureCoreDataStack {
-    NSError *error = nil;
-    NSURL *modelURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Model" ofType:@"momd"]];
-    NSManagedObjectModel *managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
-    [managedObjectStore createPersistentStoreCoordinator];
-    NSDictionary *options = @{ NSInferMappingModelAutomaticallyOption : @YES,
-                               NSMigratePersistentStoresAutomaticallyOption: @YES };
-    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Model.sqlite"];
-    
-    // Handle scheme update: no data migration in this app.
-    if (![managedObjectStore addSQLitePersistentStoreAtPath:storePath
-                                     fromSeedDatabaseAtPath:nil
-                                          withConfiguration:nil
-                                                    options:options
-                                                      error:&error])
-    {
-        NSLog(@"Failed to load data model. DB will be deleted");
-        NSLog(@"Error: %@", error);
-        [[NSFileManager defaultManager] removeItemAtPath:storePath error:&error];
-        if (![managedObjectStore addSQLitePersistentStoreAtPath:storePath
-                                         fromSeedDatabaseAtPath:nil
-                                              withConfiguration:nil
-                                                        options:options
-                                                          error:&error]) {
-            @throw [NSException exceptionWithName:@"Database error"
-                                           reason:@"Failed to re-create database. Bailing out."
-                                         userInfo:nil];
-        }
-    }
-    [managedObjectStore createManagedObjectContexts];
-    return managedObjectStore;
 }
 
 - (RKObjectMapping *)responseMapping {
@@ -139,9 +96,9 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
     return groupItemMapping;
 }
 
-- (void)requestVenuesWithLimit:(NSInteger)limit
-                        offset:(NSInteger)offset
-                    completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion
+- (void)requestVenuesWithOffset:(NSInteger)offset
+                          limit:(NSInteger)limit
+                     completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion
 {
     NSDictionary *params = @{@"ll" : @"40.724517, -73.997535", // NY office coordinates
                              @"price" : @"2,3,4",

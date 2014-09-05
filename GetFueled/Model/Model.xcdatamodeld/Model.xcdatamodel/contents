@@ -10,7 +10,7 @@
         <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="customReview" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <entity name="RecommendedItem" representedClassName="RecommendedItem" syncable="YES">
-        <attribute name="index" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="index" attributeType="Integer 32" indexed="YES" syncable="YES"/>
         <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="recommendedItem" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <entity name="Venue" representedClassName="Venue" syncable="YES">
@@ -43,7 +43,7 @@
     <elements>
         <element name="Checkin" positionX="-45" positionY="99" width="128" height="73"/>
         <element name="CustomReview" positionX="-63" positionY="63" width="128" height="88"/>
-        <element name="RecommendedItem" positionX="-36" positionY="117" width="128" height="73"/>
+        <element name="RecommendedItem" positionX="-36" positionY="117" width="128" height="75"/>
         <element name="Venue" positionX="-63" positionY="-18" width="128" height="345"/>
         <element name="VenueCategory" positionX="-18" positionY="153" width="128" height="88"/>
     </elements>
