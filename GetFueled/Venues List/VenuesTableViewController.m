@@ -13,6 +13,7 @@
 #import "ModelManager.h"
 #import "Venue.h"
 #import "RecommendedItem.h"
+#import "ActivityIndicatorView.h"
 
 
 
@@ -20,6 +21,7 @@
 @interface VenuesTableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *dataController;
+@property (nonatomic, strong) ActivityIndicatorView *pageLoadingIndicator;
 
 @end
 
@@ -47,6 +49,21 @@
     if (!fetched) {
         NSLog(@"Could not fetch recommended items: %@", [error localizedDescription]);
     }
+    
+    self.pageLoadingIndicator = [[NSBundle mainBundle] loadNibNamed:@"ActivityIndicatorView" owner:nil options:nil][0];
+    const CGFloat loadingIndicatorHeight = self.pageLoadingIndicator.frame.size.height;
+    [self.tableView insertSubview:self.pageLoadingIndicator atIndex:0];
+
+    UIEdgeInsets inset = self.tableView.contentInset;
+    inset.bottom = loadingIndicatorHeight;
+    self.tableView.contentInset = inset;
+}
+
+- (void)viewDidLayoutSubviews {
+    [self.pageLoadingIndicator startAnimating];
+    CGRect frame = self.pageLoadingIndicator.frame;
+    frame.origin.y = self.tableView.contentSize.height;
+    self.pageLoadingIndicator.frame = frame;
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {

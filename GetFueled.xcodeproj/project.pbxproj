@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueTableViewCell.m */; };
+		355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */; };
+		355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */; };
 		35722E0E19B9CC3100506522 /* VenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35722E0D19B9CC3100506522 /* VenuesTableViewController.m */; };
 		358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 358B57BD19B390F300D1F626 /* Model.xcdatamodeld */; };
 		358B57C219B391F300D1F626 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C119B391F300D1F626 /* Venue.m */; };
@@ -50,6 +52,9 @@
 /* Begin PBXFileReference section */
 		3554B4F719B239930075BB74 /* VenueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewCell.h; sourceTree = "<group>"; };
 		3554B4F819B239930075BB74 /* VenueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewCell.m; sourceTree = "<group>"; };
+		355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
+		355EA44619BA1AD3000A3F0E /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
+		355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
 		35722E0C19B9CC3100506522 /* VenuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesTableViewController.h; sourceTree = "<group>"; };
 		35722E0D19B9CC3100506522 /* VenuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewController.m; sourceTree = "<group>"; };
 		358B57BE19B390F300D1F626 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -128,6 +133,9 @@
 				3554B4F819B239930075BB74 /* VenueTableViewCell.m */,
 				35722E0C19B9CC3100506522 /* VenuesTableViewController.h */,
 				35722E0D19B9CC3100506522 /* VenuesTableViewController.m */,
+				355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */,
+				355EA44619BA1AD3000A3F0E /* ActivityIndicatorView.h */,
+				355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */,
 			);
 			path = "Venues List";
 			sourceTree = "<group>";
@@ -335,6 +343,7 @@
 				359C882419AE155000E67D29 /* Images.xcassets in Resources */,
 				359C881619AE155000E67D29 /* InfoPlist.strings in Resources */,
 				359C881F19AE155000E67D29 /* Main.storyboard in Resources */,
+				355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +423,7 @@
 				359C881819AE155000E67D29 /* main.m in Sources */,
 				358B57D419B50CE300D1F626 /* VenueCategory.m in Sources */,
 				358B57C519B3920100D1F626 /* _Venue.m in Sources */,
+				355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */,
 				3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */,
 				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,
 				358B57C819B395BA00D1F626 /* ModelManager.m in Sources */,
@@ -542,6 +552,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GetFueled/GetFueled-Prefix.pch";
 				INFOPLIST_FILE = "GetFueled/GetFueled-Info.plist";
@@ -557,6 +571,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GetFueled/GetFueled-Prefix.pch";
 				INFOPLIST_FILE = "GetFueled/GetFueled-Info.plist";

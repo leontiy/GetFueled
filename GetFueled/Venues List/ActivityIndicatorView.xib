@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="5056"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ActivityIndicatorView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view appearanceType="aqua" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERT-av-8AG">
+                    <rect key="frame" x="148" y="28" width="24" height="24"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.68235294120000001" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="QaC-Gy-Gss"/>
+                        <constraint firstAttribute="height" constant="24" id="dWy-kP-dcw"/>
+                    </constraints>
+                </view>
+                <view appearanceType="aqua" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UF1-d2-X3Z">
+                    <rect key="frame" x="180" y="28" width="24" height="24"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.68235294120000001" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="9Hv-K8-Svf"/>
+                        <constraint firstAttribute="height" constant="24" id="vbc-bL-P6S"/>
+                    </constraints>
+                </view>
+                <view appearanceType="aqua" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yB-WP-g4s">
+                    <rect key="frame" x="116" y="28" width="24" height="24"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.68235294120000001" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="MPe-uy-dVc"/>
+                        <constraint firstAttribute="width" constant="24" id="mep-Vo-0Ig"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="ERT-av-8AG" secondAttribute="centerY" id="82j-LS-kPI"/>
+                <constraint firstItem="ERT-av-8AG" firstAttribute="leading" secondItem="0yB-WP-g4s" secondAttribute="trailing" constant="8" id="BHg-hi-xr1"/>
+                <constraint firstAttribute="centerX" secondItem="ERT-av-8AG" secondAttribute="centerX" id="DXN-8S-eam"/>
+                <constraint firstItem="UF1-d2-X3Z" firstAttribute="leading" secondItem="ERT-av-8AG" secondAttribute="trailing" constant="8" id="H3M-6j-cDZ"/>
+                <constraint firstItem="ERT-av-8AG" firstAttribute="centerY" secondItem="UF1-d2-X3Z" secondAttribute="centerY" id="OXP-8Q-3We"/>
+                <constraint firstItem="ERT-av-8AG" firstAttribute="centerY" secondItem="0yB-WP-g4s" secondAttribute="centerY" id="SWY-l3-BEP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="dots" destination="0yB-WP-g4s" id="cbC-OO-a2V"/>
+                <outletCollection property="dots" destination="ERT-av-8AG" id="gXk-pG-NGi"/>
+                <outletCollection property="dots" destination="UF1-d2-X3Z" id="AQW-Xv-Y5j"/>
+            </connections>
+        </view>
+    </objects>
+</document>
