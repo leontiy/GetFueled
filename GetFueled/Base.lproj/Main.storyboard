@@ -29,7 +29,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" image="venue-photo" translatesAutoresizingMaskIntoConstraints="NO" id="TzK-XK-bfY">
+                                                        <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="venue-photo" translatesAutoresizingMaskIntoConstraints="NO" id="TzK-XK-bfY">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </imageView>
@@ -53,6 +53,14 @@
                                                                 <constraint firstAttribute="trailing" secondItem="Tdt-JH-N0h" secondAttribute="trailing" constant="4" id="OWu-hC-Ml3"/>
                                                                 <constraint firstItem="Tdt-JH-N0h" firstAttribute="leading" secondItem="JPO-2E-kHx" secondAttribute="leading" constant="4" id="sZQ-hv-TPX"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjK-n3-BDD" userLabel="Name container">
                                                             <rect key="frame" x="187" y="65" width="118" height="29"/>
@@ -74,6 +82,14 @@
                                                                 <constraint firstItem="FIp-Bs-gDU" firstAttribute="top" secondItem="DjK-n3-BDD" secondAttribute="top" id="rKH-3t-b6b"/>
                                                                 <constraint firstAttribute="bottom" secondItem="FIp-Bs-gDU" secondAttribute="bottom" id="vIq-sk-lYM"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xiq-Fl-7uy" userLabel="Open until ">
                                                             <rect key="frame" x="148" y="101" width="158" height="20"/>
@@ -95,6 +111,14 @@
                                                                 <constraint firstItem="UWB-rK-xI8" firstAttribute="top" secondItem="Xiq-Fl-7uy" secondAttribute="top" id="Wh2-sQ-7sp"/>
                                                                 <constraint firstAttribute="trailing" secondItem="UWB-rK-xI8" secondAttribute="trailing" constant="4" id="oKz-sF-0dy"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUO-zG-oMa" userLabel="Ratings container">
                                                             <rect key="frame" x="224" y="125" width="82" height="20"/>
@@ -116,6 +140,14 @@
                                                                 <constraint firstItem="Uxq-6x-fIf" firstAttribute="top" secondItem="yUO-zG-oMa" secondAttribute="top" id="emS-tO-ZbS"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Uxq-6x-fIf" secondAttribute="trailing" constant="4" id="mOF-ql-jMs"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
