@@ -32,7 +32,7 @@
     [self configureWithRepresentedObject:representedObject];
 }
 
-- (void)configureWithRepresentedObject:(Venue *)venue {
+- (void)configureWithRepresentedObject:(Venue *)venue {    
     static NSString *const kPhotoFormatSpec = @"width640";
     NSString *photoUrlString = [NSString stringWithFormat:@"%@%@%@", venue.photoUrlPrefix, kPhotoFormatSpec, venue.photoUrlSuffix];
     NSURL *photoUrl = [NSURL URLWithString:photoUrlString];
@@ -50,7 +50,7 @@
         self.hoursLabel.text = venue.openNow;
     }
     NSString *priceTier = [self representationForPriceTier:[venue.priceTier integerValue]];
-    self.ratingsLabel.text = [NSString stringWithFormat:@"%@, ★ %@", priceTier, venue.rating];
+    self.ratingsLabel.text = [NSString stringWithFormat:@"%@  ★ %@", priceTier, venue.rating];
 }
 
 - (NSString *)representationForPriceTier:(NSInteger)tier {
