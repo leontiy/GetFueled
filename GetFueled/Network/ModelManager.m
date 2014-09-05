@@ -117,10 +117,6 @@ static NSInteger kPageSize = 10;
                     item.index = @(offset + idx);
                     item.venue = (Venue *)[updateContext objectWithID:venueId];
                 }];
-                for (NSInteger idx = offset + [venues count]; idx < totalResults; idx++) {
-                    RecommendedItem *item = [updateContext insertNewObjectForEntityForName:@"RecommendedItem"];
-                    item.index = @(idx);
-                }
                 NSError *error;
                 BOOL saved = [updateContext save:&error];
                 if (!saved) {
