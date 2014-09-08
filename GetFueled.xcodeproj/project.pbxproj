@@ -10,6 +10,8 @@
 		32A110AFACFE08DC5049EC9B /* ArrayOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A11302E067A47F244F0B9C /* ArrayOperation.m */; };
 		32A11E5755A0B3558A399ABD /* Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A116B67CC8D69AA2D3015F /* Insertion.m */; };
 		32A11EB67F3FC3B81D058C08 /* Deletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A11262E9249E5A01A0D16E /* Deletion.m */; };
+		3524B7AC19BE306700748AA4 /* RequestStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3524B7AB19BE306700748AA4 /* RequestStatusView.xib */; };
+		3524B7AF19BE307E00748AA4 /* RequestStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3524B7AE19BE307E00748AA4 /* RequestStatusView.m */; };
 		3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */; };
 		355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */; };
 		355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */; };
@@ -60,6 +62,9 @@
 		32A116B67CC8D69AA2D3015F /* Insertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Insertion.m; sourceTree = "<group>"; };
 		32A11D15A9B2B4F0974C8EF4 /* ArrayOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayOperation.h; sourceTree = "<group>"; };
 		32A11EB12888D3D5CF0D7DEE /* Deletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deletion.h; sourceTree = "<group>"; };
+		3524B7AB19BE306700748AA4 /* RequestStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestStatusView.xib; sourceTree = "<group>"; };
+		3524B7AD19BE307E00748AA4 /* RequestStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestStatusView.h; sourceTree = "<group>"; };
+		3524B7AE19BE307E00748AA4 /* RequestStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestStatusView.m; sourceTree = "<group>"; };
 		3554B4F719B239930075BB74 /* VenueCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCollectionViewCell.h; sourceTree = "<group>"; };
 		3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCollectionViewCell.m; sourceTree = "<group>"; };
 		355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
@@ -160,6 +165,9 @@
 				35722E0C19B9CC3100506522 /* VenuesCollectionViewController.h */,
 				35722E0D19B9CC3100506522 /* VenuesCollectionViewController.m */,
 				355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */,
+				3524B7AB19BE306700748AA4 /* RequestStatusView.xib */,
+				3524B7AD19BE307E00748AA4 /* RequestStatusView.h */,
+				3524B7AE19BE307E00748AA4 /* RequestStatusView.m */,
 				355EA44619BA1AD3000A3F0E /* ActivityIndicatorView.h */,
 				355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */,
 			);
@@ -371,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				359C882419AE155000E67D29 /* Images.xcassets in Resources */,
+				3524B7AC19BE306700748AA4 /* RequestStatusView.xib in Resources */,
 				359C881619AE155000E67D29 /* InfoPlist.strings in Resources */,
 				359C881F19AE155000E67D29 /* Main.storyboard in Resources */,
 				355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */,
@@ -442,6 +451,7 @@
 			files = (
 				358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */,
 				358B57D219B50CE300D1F626 /* CustomReview.m in Sources */,
+				3524B7AF19BE307E00748AA4 /* RequestStatusView.m in Sources */,
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
 				35722E0E19B9CC3100506522 /* VenuesCollectionViewController.m in Sources */,
 				358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */,

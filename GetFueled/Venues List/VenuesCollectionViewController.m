@@ -16,6 +16,7 @@
 #import "Venue.h"
 #import "RecommendedItem.h"
 #import "ActivityIndicatorView.h"
+#import "RequestStatusView.h"
 #import "DataRequest.h"
 #import "Insertion.h"
 #import "Deletion.h"
@@ -28,9 +29,11 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) ActivityIndicatorView *pageLoadingIndicator;
+@property (nonatomic, strong) RequestStatusView *requestStatusView;
 @property (nonatomic, readonly) NSManagedObjectContext *context;
 @property (nonatomic, strong) NSFetchedResultsController *dataController;
 @property (nonatomic, strong) NSMutableArray *updateOperations;
+@property (nonatomic, weak) UIView *currentBottomView;
 @end
 
 @implementation VenuesCollectionViewController
@@ -43,16 +46,6 @@
 {
     [super viewDidLoad];
     
-    DataRequest *request = [[ModelManager sharedModelManager] refresh];
-    @weakify(self);
-    [request succeeded:^(DataRequest *request, id result) {
-        @strongify(self);
-        // update loading indicator <#here#>
-    }];
-    [request failed:^(DataRequest *request, NSError *error) {
-        // TOOD handle failure <#here#>
-    }];
-
     NSFetchRequest *recommendedItems = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([RecommendedItem class])];
     recommendedItems.relationshipKeyPathsForPrefetching = @[ @keypath(RecommendedItem.new, venue),
                                                              @keypath(RecommendedItem.new, venue.categories) ];
@@ -67,13 +60,8 @@
     if (!fetched) {
         NSLog(@"Could not fetch data %@", [error localizedDescription]);
     }
-}
 
-- (void)viewDidLayoutSubviews {
-    [self.pageLoadingIndicator startAnimating];
-    CGRect frame = self.pageLoadingIndicator.frame;
-    frame.origin.y = self.collectionView.contentSize.height;
-    self.pageLoadingIndicator.frame = frame;
+    [self requestNextPage];
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
@@ -125,7 +113,7 @@
     BOOL animated = [[self.updateOperations rx_foldInitialValue:@0 block:^NSNumber *(NSNumber *memo, ArrayOperation *op) {
         BOOL positive = [op isKindOfClass:[Insertion class]];
         return @([memo integerValue] + (positive?  +1 : -1));
-    }] integerValue] != 0;
+    }] integerValue] < 0;
     
     if (animated) {
         roll();
@@ -137,7 +125,6 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.dataController.fetchedObjects count];
 }
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     VenueCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VenueCell" forIndexPath:indexPath];
@@ -154,27 +141,63 @@
         [self showPageLoadingIndicator];
     }
     @weakify(self);
-    [request completed:^(DataRequest *request) {
+    [request succeeded:^(DataRequest *request, id result) {
         @strongify(self);
         [self hidePageLoadingIndicator];
     }];
+    [request failed:^(DataRequest *request, NSError *error) {
+        [self hidePageLoadingIndicator];
+        [self showStatusView];
+        self.requestStatusView.textLabel.text = @"Communication error occurred.\nTap here to retry.";
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(retryPageLoad:)];
+        [self.requestStatusView addGestureRecognizer:tapRecognizer];
+    }];
+}
+
+- (void)retryPageLoad:(UIGestureRecognizer *)recognizer {
+    [self requestNextPage];
 }
 
 - (void)showPageLoadingIndicator {
-    self.pageLoadingIndicator = [[NSBundle mainBundle] loadNibNamed:@"ActivityIndicatorView" owner:nil options:nil][0];
-    const CGFloat loadingIndicatorHeight = self.pageLoadingIndicator.frame.size.height;
-    [self.collectionView insertSubview:self.pageLoadingIndicator atIndex:0];
-    
-    UIEdgeInsets inset = self.collectionView.contentInset;
-    inset.bottom = loadingIndicatorHeight;
-    self.collectionView.contentInset = inset;
-    [self.view setNeedsLayout];
+    [self hideStatusView]; // if any
+
+    self.pageLoadingIndicator = (id)[self loadBottomViewFromNibNamed:@"ActivityIndicatorView"];
+    [self.pageLoadingIndicator startAnimating];
 }
 
 - (void)hidePageLoadingIndicator {
     [self.pageLoadingIndicator removeFromSuperview];
     self.pageLoadingIndicator = nil;
-    //FIXME content inset: hopefully not necessary
+    
+    [self showStatusView];
+}
+
+- (void)showStatusView {
+    self.requestStatusView = (id)[self loadBottomViewFromNibNamed:@"RequestStatusView"];
+}
+
+- (void)hideStatusView {
+    [self.requestStatusView removeFromSuperview];
+    self.requestStatusView = nil;
+}
+
+- (UIView *)loadBottomViewFromNibNamed:(NSString *)nibName {
+    UIView *view = [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil][0];
+    const CGFloat requestStatusViewHeight = view.frame.size.height;
+    [self.collectionView insertSubview:view atIndex:0];
+
+    UIEdgeInsets inset = self.collectionView.contentInset;
+    inset.bottom = requestStatusViewHeight;
+    self.collectionView.contentInset = inset;
+    self.currentBottomView = view;
+    [self.view setNeedsLayout];
+    return view;
+}
+
+- (void)viewDidLayoutSubviews {
+    CGRect frame = self.currentBottomView.frame;
+    frame.origin.y = self.collectionView.contentSize.height;
+    self.currentBottomView.frame = frame;
 }
 
 @end
