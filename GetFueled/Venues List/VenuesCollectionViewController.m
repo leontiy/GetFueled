@@ -49,77 +49,6 @@
     [self requestNextPage];
 }
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    self.updateOperations = [NSMutableArray new];
-}
-
-- (void)controller:(NSFetchedResultsController *)controller
-   didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath
-     forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath
-{
-    Venue *venue = [anObject venue];
-    switch(type) {
-        case NSFetchedResultsChangeInsert: {
-            Insertion *insertion = [Insertion insertionWithObject:venue indexPath:newIndexPath];
-            [self.updateOperations addObject:insertion];
-        }; break;
-            
-        case NSFetchedResultsChangeDelete:{
-            Deletion *deletion = [Deletion deletionWithObject:venue indexPath:indexPath];
-            [self.updateOperations addObject:deletion];
-        }; break;
-            
-        case NSFetchedResultsChangeUpdate: {
-            VenueCollectionViewCell *cell = (id)[self.collectionView cellForItemAtIndexPath:indexPath];
-            cell.representedObject = venue;
-        }; break;
-            
-        case NSFetchedResultsChangeMove: {
-            Deletion *deletion = [Deletion deletionWithObject:venue indexPath:indexPath];
-            [self.updateOperations addObject:deletion];
-            Insertion *insertion = [Insertion insertionWithObject:venue indexPath:newIndexPath];
-            [self.updateOperations addObject:insertion];
-        }; break;
-    }
-}
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    dispatch_block_t roll = ^{
-        [self.collectionView performBatchUpdates:^{
-            [self.updateOperations enumerateObjectsUsingBlock:^(ArrayOperation *operation, NSUInteger idx, BOOL *stop) {
-                [operation applyToCollectionView:self.collectionView];
-            }];
-        } completion:^(BOOL finished) {
-            self.updateOperations = nil;
-        }];
-    };
-    BOOL animated = [[self.updateOperations rx_foldInitialValue:@0 block:^NSNumber *(NSNumber *memo, ArrayOperation *op) {
-        BOOL positive = [op isKindOfClass:[Insertion class]];
-        return @([memo integerValue] + (positive?  +1 : -1));
-    }] integerValue] < 0;
-    
-    if (animated) {
-        roll();
-    } else {
-        [UIView performWithoutAnimation:roll];
-    }
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.dataController.fetchedObjects count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    VenueCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VenueCell" forIndexPath:indexPath];
-    cell.representedObject = [self.dataController.fetchedObjects[indexPath.row] venue];
-    if (indexPath.row == [self.dataController.fetchedObjects count] - 1) {
-        [self requestNextPage];
-    }
-    return cell;
-}
-
 - (void)requestNextPage {
     DataRequest *request = [[ModelManager sharedModelManager] loadNextPage];
     if (request) {
@@ -206,6 +135,79 @@
     CGRect frame = self.currentBottomView.frame;
     frame.origin.y = self.collectionView.contentSize.height;
     self.currentBottomView.frame = frame;
+}
+
+#pragma mark - 
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    self.updateOperations = [NSMutableArray new];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    Venue *venue = [anObject venue];
+    switch(type) {
+        case NSFetchedResultsChangeInsert: {
+            Insertion *insertion = [Insertion insertionWithObject:venue indexPath:newIndexPath];
+            [self.updateOperations addObject:insertion];
+        }; break;
+            
+        case NSFetchedResultsChangeDelete:{
+            Deletion *deletion = [Deletion deletionWithObject:venue indexPath:indexPath];
+            [self.updateOperations addObject:deletion];
+        }; break;
+            
+        case NSFetchedResultsChangeUpdate: {
+            VenueCollectionViewCell *cell = (id)[self.collectionView cellForItemAtIndexPath:indexPath];
+            cell.representedObject = venue;
+        }; break;
+            
+        case NSFetchedResultsChangeMove: {
+            Deletion *deletion = [Deletion deletionWithObject:venue indexPath:indexPath];
+            [self.updateOperations addObject:deletion];
+            Insertion *insertion = [Insertion insertionWithObject:venue indexPath:newIndexPath];
+            [self.updateOperations addObject:insertion];
+        }; break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    dispatch_block_t roll = ^{
+        [self.collectionView performBatchUpdates:^{
+            [self.updateOperations enumerateObjectsUsingBlock:^(ArrayOperation *operation, NSUInteger idx, BOOL *stop) {
+                [operation applyToCollectionView:self.collectionView];
+            }];
+        } completion:^(BOOL finished) {
+            self.updateOperations = nil;
+        }];
+    };
+    BOOL animated = [[self.updateOperations rx_foldInitialValue:@0 block:^NSNumber *(NSNumber *memo, ArrayOperation *op) {
+        BOOL positive = [op isKindOfClass:[Insertion class]];
+        return @([memo integerValue] + (positive?  +1 : -1));
+    }] integerValue] < 0;
+    
+    if (animated) {
+        roll();
+    } else {
+        [UIView performWithoutAnimation:roll];
+    }
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.dataController.fetchedObjects count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    VenueCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VenueCell" forIndexPath:indexPath];
+    cell.representedObject = [self.dataController.fetchedObjects[indexPath.row] venue];
+    if (indexPath.row == [self.dataController.fetchedObjects count] - 1) {
+        [self requestNextPage];
+    }
+    return cell;
 }
 
 @end
