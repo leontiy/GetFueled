@@ -10,7 +10,7 @@
 
 @class Venue;
 
-@interface VenueTableViewCell : UITableViewCell
+@interface VenueCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) Venue *representedObject;
 

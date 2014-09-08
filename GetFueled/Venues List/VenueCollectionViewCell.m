@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Leonty Deriglazov. All rights reserved.
 //
 
-#import "VenueTableViewCell.h"
+#import "VenueCollectionViewCell.h"
 #import <AFNetworking/AFNetworking.h>
 #import "Venue.h"
 #import "VenueCategory.h"
@@ -14,18 +14,19 @@
 
 
 
-@interface VenueTableViewCell ()
+@interface VenueCollectionViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hoursLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ratingsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end
 
 
-@implementation VenueTableViewCell
+@implementation VenueCollectionViewCell
 
 - (void)setRepresentedObject:(Venue *)representedObject {
     _representedObject = representedObject;
@@ -33,7 +34,7 @@
 }
 
 - (void)configureWithRepresentedObject:(Venue *)venue {    
-    static NSString *const kPhotoFormatSpec = @"width640";
+    static NSString *const kPhotoFormatSpec = @"640x326";
     NSString *photoUrlString = [NSString stringWithFormat:@"%@%@%@", venue.photoUrlPrefix, kPhotoFormatSpec, venue.photoUrlSuffix];
     NSURL *photoUrl = [NSURL URLWithString:photoUrlString];
     [self.photoView setImageWithURL:photoUrl];
@@ -45,12 +46,13 @@
     
     self.nameLabel.text = venue.name;
     
-    self.hoursLabel.hidden = (venue.openNow == nil);
-    if (venue.openNow) {
-        self.hoursLabel.text = venue.openNow;
-    }
+    self.hoursLabel.hidden = [venue.openNow length] == 0;
+    self.hoursLabel.text = venue.openNow;
+    
     NSString *priceTier = [self representationForPriceTier:[venue.priceTier integerValue]];
     self.ratingsLabel.text = [NSString stringWithFormat:@"%@  ★ %@", priceTier, venue.rating];
+
+    self.addressLabel.text = venue.address;
 }
 
 - (NSString *)representationForPriceTier:(NSInteger)tier {
@@ -59,12 +61,6 @@
         [repr appendString:@"$"];
     }
     return [repr copy];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)prepareForReuse {

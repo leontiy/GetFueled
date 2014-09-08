@@ -123,13 +123,15 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
     NSInteger count = [mappingResult.dictionary[@"response"][@"totalResults"] integerValue];
     NSArray *groups = mappingResult.dictionary[@"response.groups"];
     // TODO: delete redundant mappings: I can filter the venues before mapping any entities
-    NSArray *venues = [[[groups rx_mapWithBlock:^id(NSDictionary *group) {
+    NSArray *venues = [[[[groups rx_mapWithBlock:^id(NSDictionary *group) {
         return [group valueForKeyPath:@"items.venue"];
     }] rx_foldInitialValue:[NSMutableArray array] block:^id(id memo, id next) {
         [memo addObjectsFromArray:next];
         return memo;
+    }] rx_mapWithBlock:^id(NSManagedObject *object) {
+        return [object objectID];
     }] copy];
-    return @{ @"totalResults" : @(count), @"venues" : venues };
+    return @{ @"totalResults" : @(count), @"venueIds" : venues };
 }
 
 - (DataRequest *)getObjectsAtPath:(NSString *)path parameters:(NSDictionary *)parameters responseProcessor:(SEL)processor {
@@ -138,8 +140,11 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
     parameters = parameters ?: @{};
     
     NSParameterAssert(!!processor);
-    RKObjectRequestOperation *operation = [self.objectManager appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodGET path:path parameters:parameters];
-    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSURLRequest *urlRequest = [self.objectManager requestWithObject:nil method:RKRequestMethodGET path:path parameters:parameters];
+    RKObjectRequestOperation *operation = [self.objectManager managedObjectRequestOperationWithRequest:urlRequest
+                                                                                  managedObjectContext:nil
+                                                                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+    {
         ResponseProcessorMethodIMP method = (ResponseProcessorMethodIMP)[self methodForSelector:processor];
         NSError *error;
         modelRequest.result = method(self, processor, mappingResult, &error);
@@ -150,8 +155,10 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
         }
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        [modelRequest didFail:error];
+       [modelRequest didFail:error];
     }];
+    
+//    [self.objectManager appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodGET path:path parameters:parameters];
     
     // give the caller a chance to configure the request
     dispatch_async(dispatch_get_main_queue(), ^{

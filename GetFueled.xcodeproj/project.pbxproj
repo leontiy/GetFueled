@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueTableViewCell.m */; };
+		32A110AFACFE08DC5049EC9B /* ArrayOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A11302E067A47F244F0B9C /* ArrayOperation.m */; };
+		32A11E5755A0B3558A399ABD /* Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A116B67CC8D69AA2D3015F /* Insertion.m */; };
+		32A11EB67F3FC3B81D058C08 /* Deletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A11262E9249E5A01A0D16E /* Deletion.m */; };
+		3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */; };
 		355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */; };
 		355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */; };
-		35722E0E19B9CC3100506522 /* VenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35722E0D19B9CC3100506522 /* VenuesTableViewController.m */; };
+		35722E0E19B9CC3100506522 /* VenuesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35722E0D19B9CC3100506522 /* VenuesCollectionViewController.m */; };
 		358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 358B57BD19B390F300D1F626 /* Model.xcdatamodeld */; };
 		358B57C219B391F300D1F626 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C119B391F300D1F626 /* Venue.m */; };
 		358B57C519B3920100D1F626 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C419B3920100D1F626 /* _Venue.m */; };
@@ -51,13 +54,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3554B4F719B239930075BB74 /* VenueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewCell.h; sourceTree = "<group>"; };
-		3554B4F819B239930075BB74 /* VenueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewCell.m; sourceTree = "<group>"; };
+		32A11212DE940EA34B81625D /* Insertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Insertion.h; sourceTree = "<group>"; };
+		32A11262E9249E5A01A0D16E /* Deletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deletion.m; sourceTree = "<group>"; };
+		32A11302E067A47F244F0B9C /* ArrayOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayOperation.m; sourceTree = "<group>"; };
+		32A116B67CC8D69AA2D3015F /* Insertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Insertion.m; sourceTree = "<group>"; };
+		32A11D15A9B2B4F0974C8EF4 /* ArrayOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayOperation.h; sourceTree = "<group>"; };
+		32A11EB12888D3D5CF0D7DEE /* Deletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deletion.h; sourceTree = "<group>"; };
+		3554B4F719B239930075BB74 /* VenueCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCollectionViewCell.h; sourceTree = "<group>"; };
+		3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCollectionViewCell.m; sourceTree = "<group>"; };
 		355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
 		355EA44619BA1AD3000A3F0E /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
 		355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
-		35722E0C19B9CC3100506522 /* VenuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesTableViewController.h; sourceTree = "<group>"; };
-		35722E0D19B9CC3100506522 /* VenuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewController.m; sourceTree = "<group>"; };
+		35722E0C19B9CC3100506522 /* VenuesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesCollectionViewController.h; sourceTree = "<group>"; };
+		35722E0D19B9CC3100506522 /* VenuesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesCollectionViewController.m; sourceTree = "<group>"; };
 		358B57BE19B390F300D1F626 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		358B57C019B391F300D1F626 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		358B57C119B391F300D1F626 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
@@ -130,13 +139,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3524B7A719BE076000748AA4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				32A116B67CC8D69AA2D3015F /* Insertion.m */,
+				32A11212DE940EA34B81625D /* Insertion.h */,
+				32A11262E9249E5A01A0D16E /* Deletion.m */,
+				32A11EB12888D3D5CF0D7DEE /* Deletion.h */,
+				32A11302E067A47F244F0B9C /* ArrayOperation.m */,
+				32A11D15A9B2B4F0974C8EF4 /* ArrayOperation.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		3554B4F619B2393E0075BB74 /* Venues List */ = {
 			isa = PBXGroup;
 			children = (
-				3554B4F719B239930075BB74 /* VenueTableViewCell.h */,
-				3554B4F819B239930075BB74 /* VenueTableViewCell.m */,
-				35722E0C19B9CC3100506522 /* VenuesTableViewController.h */,
-				35722E0D19B9CC3100506522 /* VenuesTableViewController.m */,
+				3554B4F719B239930075BB74 /* VenueCollectionViewCell.h */,
+				3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */,
+				35722E0C19B9CC3100506522 /* VenuesCollectionViewController.h */,
+				35722E0D19B9CC3100506522 /* VenuesCollectionViewController.m */,
 				355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */,
 				355EA44619BA1AD3000A3F0E /* ActivityIndicatorView.h */,
 				355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */,
@@ -211,6 +233,7 @@
 		359C881119AE155000E67D29 /* GetFueled */ = {
 			isa = PBXGroup;
 			children = (
+				3524B7A719BE076000748AA4 /* Utilities */,
 				359C884319AE23D800E67D29 /* Networking */,
 				358B57B719B38B0300D1F626 /* Model */,
 				3554B4F619B2393E0075BB74 /* Venues List */,
@@ -420,7 +443,7 @@
 				358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */,
 				358B57D219B50CE300D1F626 /* CustomReview.m in Sources */,
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
-				35722E0E19B9CC3100506522 /* VenuesTableViewController.m in Sources */,
+				35722E0E19B9CC3100506522 /* VenuesCollectionViewController.m in Sources */,
 				358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */,
 				359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */,
 				358B57C219B391F300D1F626 /* Venue.m in Sources */,
@@ -431,10 +454,13 @@
 				358B57D419B50CE300D1F626 /* VenueCategory.m in Sources */,
 				358B57C519B3920100D1F626 /* _Venue.m in Sources */,
 				355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */,
-				3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */,
+				3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */,
 				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,
 				358B57C819B395BA00D1F626 /* ModelManager.m in Sources */,
 				35CC6CD319BC6A6E003C6AB2 /* DataRequest.m in Sources */,
+				32A11E5755A0B3558A399ABD /* Insertion.m in Sources */,
+				32A11EB67F3FC3B81D058C08 /* Deletion.m in Sources */,
+				32A110AFACFE08DC5049EC9B /* ArrayOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

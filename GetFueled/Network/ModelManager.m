@@ -38,8 +38,7 @@ static NSInteger kPageSize = 10;
     return instance;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.api = [[FoursquareApi alloc] initWithDataStore:[ModelManager managedObjectStore]];
@@ -89,45 +88,24 @@ static NSInteger kPageSize = 10;
     return [ModelManager managedObjectStore];
 }
 
-- (NSInteger)objectCount {
-    return [self.mutableObjects count];
+- (NSManagedObjectContext *)mainContext {
+    return [ModelManager managedObjectStore].mainQueueManagedObjectContext;
 }
 
-- (id)objectAtIndexPath:(NSIndexPath *)indexPath {
-    id object = self.mutableObjects[indexPath.row];
-    if (!object) {
-        //[self requestRangeContaining:indexPath];
-    }
-    return object;
-}
-
-- (void)refresh {
+- (DataRequest *)refresh {
     NSInteger offset = 0;
     DataRequest *request = [self.api requestRecommendedVenuesWithOffset:offset limit:kPageSize];
     [request succeeded:^(DataRequest *request, NSDictionary *result) {
-        NSArray *venues = result[@"venues"];
+        NSArray *venueIds = result[@"venueIds"];
         NSManagedObjectContext *updateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        updateContext.parentContext = self.managedObjectStore.mainQueueManagedObjectContext;
-        NSArray *venueIds = [venues rx_mapWithBlock:^id(Venue *venue) {
-            NSAssert(![venue.objectID isTemporaryID], @"Venues must be persisted at this point.");
-            return venue.objectID;
-        }];
+        updateContext.parentContext = self.mainContext;
         [updateContext performBlock:^{
             [self deleteRecommendedItemsInContext:updateContext];
-            [venueIds enumerateObjectsUsingBlock:^(NSManagedObjectID *venueId, NSUInteger idx, BOOL *stop) {
-                RecommendedItem *item = [updateContext insertNewObjectForEntityForName:@"RecommendedItem"];
-                item.index = @(offset + idx);
-                item.venue = (Venue *)[updateContext objectWithID:venueId];
-            }];
-            NSError *error;
-            BOOL saved = [updateContext save:&error];
-            if (!saved) {
-                NSLog(@"Can't update recommended items: %@", [error localizedDescription]);
-            }
+            [self createRecommendedItemsWithVenueIds:venueIds offset:offset context:updateContext];
         }];
 
     }];
-    
+    return request;
 }
 
 - (void)deleteRecommendedItemsInContext:(NSManagedObjectContext *)context {
@@ -139,15 +117,26 @@ static NSInteger kPageSize = 10;
         if (oldItems == nil) {
             NSLog(@"Can't delete recommended items: %@", [error localizedDescription]);
         }
+        for (RecommendedItem *item in oldItems) {
+            [context deleteObject:item];
+        }
     }];
 }
 
-- (void)requestItemAtIndex:(NSInteger)idx {
-    //TODO <#here#>
+- (void)createRecommendedItemsWithVenueIds:(NSArray *)venueIds offset:(NSInteger)offset context:(NSManagedObjectContext *)context {
+    [context performBlockAndWait:^{
+        [venueIds enumerateObjectsUsingBlock:^(NSManagedObjectID *venueId, NSUInteger idx, BOOL *stop) {
+            RecommendedItem *item = [context insertNewObjectForEntityForName:@"RecommendedItem"];
+            item.index = @(offset + idx);
+            item.venue = (Venue *)[context objectWithID:venueId];
+        }];
+        NSError *error;
+        BOOL saved = [context saveToPersistentStore:&error];
+        if (!saved) {
+            NSLog(@"Can't update recommended items: %@", [error localizedDescription]);
+        }
+    }];
 }
 
-- (NSManagedObjectContext *)mainContext {
-    return [self managedObjectStore].mainQueueManagedObjectContext;
-}
 
 @end

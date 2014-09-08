@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VenuesTableViewController : UITableViewController
+@interface VenuesCollectionViewController : UIViewController
 
 @end
