@@ -67,14 +67,6 @@
     if (!fetched) {
         NSLog(@"Could not fetch data %@", [error localizedDescription]);
     }
-    
-    self.pageLoadingIndicator = [[NSBundle mainBundle] loadNibNamed:@"ActivityIndicatorView" owner:nil options:nil][0];
-    const CGFloat loadingIndicatorHeight = self.pageLoadingIndicator.frame.size.height;
-    [self.collectionView insertSubview:self.pageLoadingIndicator atIndex:0];
-
-    UIEdgeInsets inset = self.collectionView.contentInset;
-    inset.bottom = loadingIndicatorHeight;
-    self.collectionView.contentInset = inset;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -158,8 +150,31 @@
 
 - (void)requestNextPage {
     DataRequest *request = [[ModelManager sharedModelManager] loadNextPage];
-//    [request succeeded:<#^(DataRequest *request, id result)callback#>];
-//    [request failed:<#^(DataRequest *request, NSError *error)callback#>];
+    if (request) {
+        [self showPageLoadingIndicator];
+    }
+    @weakify(self);
+    [request completed:^(DataRequest *request) {
+        @strongify(self);
+        [self hidePageLoadingIndicator];
+    }];
+}
+
+- (void)showPageLoadingIndicator {
+    self.pageLoadingIndicator = [[NSBundle mainBundle] loadNibNamed:@"ActivityIndicatorView" owner:nil options:nil][0];
+    const CGFloat loadingIndicatorHeight = self.pageLoadingIndicator.frame.size.height;
+    [self.collectionView insertSubview:self.pageLoadingIndicator atIndex:0];
+    
+    UIEdgeInsets inset = self.collectionView.contentInset;
+    inset.bottom = loadingIndicatorHeight;
+    self.collectionView.contentInset = inset;
+    [self.view setNeedsLayout];
+}
+
+- (void)hidePageLoadingIndicator {
+    [self.pageLoadingIndicator removeFromSuperview];
+    self.pageLoadingIndicator = nil;
+    //FIXME content inset: hopefully not necessary
 }
 
 @end
