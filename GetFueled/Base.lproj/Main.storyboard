@@ -32,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView appearanceType="aqua" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-SG-IUg">
+                            <collectionView appearanceType="aqua" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-SG-IUg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
@@ -249,6 +249,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QHM-5j-1RF" firstAttribute="top" secondItem="bRR-SG-IUg" secondAttribute="bottom" id="4Wb-vF-Dvl"/>
+                            <constraint firstAttribute="trailing" secondItem="bRR-SG-IUg" secondAttribute="trailing" id="XBW-fi-sGS"/>
+                            <constraint firstItem="bRR-SG-IUg" firstAttribute="leading" secondItem="Qiw-da-qyc" secondAttribute="leading" id="Ymq-P6-gfQ"/>
+                            <constraint firstItem="bRR-SG-IUg" firstAttribute="top" secondItem="Qiw-da-qyc" secondAttribute="top" id="ZFj-cg-Jbw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1TK-TD-8RM"/>
                     <connections>
