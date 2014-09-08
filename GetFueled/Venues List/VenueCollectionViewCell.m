@@ -33,7 +33,11 @@
     [self configureWithRepresentedObject:representedObject];
 }
 
-- (void)configureWithRepresentedObject:(Venue *)venue {    
+- (void)configureWithRepresentedObject:(Venue *)venue {
+    if (venue == nil) {
+        return;
+    }
+    
     static NSString *const kPhotoFormatSpec = @"640x326";
     NSString *photoUrlString = [NSString stringWithFormat:@"%@%@%@", venue.photoUrlPrefix, kPhotoFormatSpec, venue.photoUrlSuffix];
     NSURL *photoUrl = [NSURL URLWithString:photoUrlString];
@@ -64,6 +68,7 @@
 }
 
 - (void)prepareForReuse {
+    self.photoView.image = nil;
     self.representedObject = nil;
 }
 
