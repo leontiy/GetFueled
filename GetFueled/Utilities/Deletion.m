@@ -13,7 +13,9 @@
 }
 
 - (void)applyToCollectionView:(UICollectionView *)collectionView {
-    [collectionView deleteItemsAtIndexPaths:@[ self.indexPath ]];
+    if (self.indexPath.row < [collectionView numberOfItemsInSection:0]) {
+        [collectionView deleteItemsAtIndexPaths:@[ self.indexPath ]];
+    }
 }
 
 @end

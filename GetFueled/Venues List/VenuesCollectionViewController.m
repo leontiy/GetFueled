@@ -34,6 +34,7 @@
 @property (nonatomic, strong) NSFetchedResultsController *dataController;
 @property (nonatomic, strong) NSMutableArray *updateOperations;
 @property (nonatomic, weak) UIView *currentBottomView;
+
 @end
 
 @implementation VenuesCollectionViewController
@@ -42,25 +43,9 @@
     return [ModelManager sharedModelManager].mainContext;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSFetchRequest *recommendedItems = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([RecommendedItem class])];
-    recommendedItems.relationshipKeyPathsForPrefetching = @[ @keypath(RecommendedItem.new, venue),
-                                                             @keypath(RecommendedItem.new, venue.categories) ];
-    recommendedItems.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@keypath(RecommendedItem.new, index) ascending:YES] ];
-    self.dataController = [[NSFetchedResultsController alloc] initWithFetchRequest:recommendedItems
-                                                              managedObjectContext:self.context
-                                                                sectionNameKeyPath:nil
-                                                                         cacheName:nil];
-    self.dataController.delegate = self;
-    NSError *error;
-    BOOL fetched = [self.dataController performFetch:&error];
-    if (!fetched) {
-        NSLog(@"Could not fetch data %@", [error localizedDescription]);
-    }
-
     [self requestNextPage];
 }
 
@@ -144,14 +129,37 @@
     [request succeeded:^(DataRequest *request, id result) {
         @strongify(self);
         [self hidePageLoadingIndicator];
+        [self createDataControllerIfNeeded];
     }];
     [request failed:^(DataRequest *request, NSError *error) {
+        @strongify(self);
         [self hidePageLoadingIndicator];
         [self showStatusView];
         self.requestStatusView.textLabel.text = @"Communication error occurred.\nTap here to retry.";
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(retryPageLoad:)];
         [self.requestStatusView addGestureRecognizer:tapRecognizer];
     }];
+}
+
+- (void)createDataControllerIfNeeded {
+    if (self.dataController) {
+        return;
+    }
+    
+    NSFetchRequest *recommendedItems = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([RecommendedItem class])];
+    recommendedItems.relationshipKeyPathsForPrefetching = @[ @keypath(RecommendedItem.new, venue),
+                                                              @keypath(RecommendedItem.new, venue.categories) ];
+    recommendedItems.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@keypath(RecommendedItem.new, index) ascending:YES] ];
+    self.dataController = [[NSFetchedResultsController alloc] initWithFetchRequest:recommendedItems
+                                                              managedObjectContext:self.context
+                                                                sectionNameKeyPath:nil
+                                                                         cacheName:nil];
+    self.dataController.delegate = self;
+    NSError *error;
+    BOOL fetched = [self.dataController performFetch:&error];
+    if (!fetched) {
+        NSLog(@"Could not fetch data %@", [error localizedDescription]);
+    }
 }
 
 - (void)retryPageLoad:(UIGestureRecognizer *)recognizer {
