@@ -8,6 +8,7 @@
 
 #import "VenuesCollectionViewController.h"
 @import CoreData;
+#import <RestKit/CoreData/NSManagedObjectContext+RKAdditions.h>
 #import <libextobjc/EXTKeyPathCoding.h>
 #import <libextobjc/EXTScope.h>
 #import <RXCollections/RXCollection.h>
@@ -20,6 +21,7 @@
 #import "DataRequest.h"
 #import "Insertion.h"
 #import "Deletion.h"
+#import "DTActionSheet.h"
 
 
 
@@ -59,6 +61,9 @@
         @strongify(self);
         [self hidePageLoadingIndicator];
         [self createDataControllerIfNeeded];
+        if ([self.dataController.fetchedObjects count] == 0 && [result[@"totalResults"] integerValue] > 0) { // all blocked in current page
+            [self requestNextPage];
+        }
     }];
     [request failed:^(DataRequest *request, NSError *error) {
         @strongify(self);
@@ -79,6 +84,7 @@
     recommendedItems.relationshipKeyPathsForPrefetching = @[ @keypath(RecommendedItem.new, venue),
                                                               @keypath(RecommendedItem.new, venue.categories) ];
     recommendedItems.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@keypath(RecommendedItem.new, index) ascending:YES] ];
+    recommendedItems.predicate = [NSPredicate predicateWithFormat:@"venue.blacklisted == FALSE"];
     self.dataController = [[NSFetchedResultsController alloc] initWithFetchRequest:recommendedItems
                                                               managedObjectContext:self.context
                                                                 sectionNameKeyPath:nil
@@ -137,7 +143,7 @@
     self.currentBottomView.frame = frame;
 }
 
-#pragma mark - 
+#pragma mark Fetched Results Controller delegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     self.updateOperations = [NSMutableArray new];
@@ -197,6 +203,8 @@
     }
 }
 
+#pragma mark Collection View delegate / data source
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.dataController.fetchedObjects count];
 }
@@ -207,7 +215,31 @@
     if (indexPath.row == [self.dataController.fetchedObjects count] - 1) {
         [self requestNextPage];
     }
+    if (cell.longPressRecognizer) {
+        [cell removeGestureRecognizer:cell.longPressRecognizer];
+    }
+    cell.longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(venueOptions:)];
+    [cell addGestureRecognizer:cell.longPressRecognizer];
     return cell;
+}
+
+#pragma mark -
+
+- (IBAction)venueOptions:(UILongPressGestureRecognizer *)recognizer {
+    if (recognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    
+    DTActionSheet *sheet = [[DTActionSheet alloc] initWithTitle:nil];
+    [sheet addDestructiveButtonWithTitle:@"Don't show this venue again" block:^{
+        VenueCollectionViewCell *cell = (id)recognizer.view;
+        cell.representedObject.blacklisted = @YES;
+        [self.context saveToPersistentStore:nil];
+        [self.dataController performFetch:nil];
+        [self.collectionView deleteItemsAtIndexPaths:@[ [self.collectionView indexPathForCell:cell] ]];
+    }];
+    [sheet addCancelButtonWithTitle:@"Cancel"];
+    [sheet showInView:self.view];
 }
 
 @end

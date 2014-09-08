@@ -13,5 +13,6 @@
 @interface VenueCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) Venue *representedObject;
+@property (nonatomic, strong) UILongPressGestureRecognizer *longPressRecognizer;
 
 @end

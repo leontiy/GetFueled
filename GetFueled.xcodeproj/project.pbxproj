@@ -10,6 +10,7 @@
 		32A110AFACFE08DC5049EC9B /* ArrayOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A11302E067A47F244F0B9C /* ArrayOperation.m */; };
 		32A11E5755A0B3558A399ABD /* Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A116B67CC8D69AA2D3015F /* Insertion.m */; };
 		32A11EB67F3FC3B81D058C08 /* Deletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A11262E9249E5A01A0D16E /* Deletion.m */; };
+		3520B2A919BE543C000DA7D6 /* DTActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520B2A819BE543C000DA7D6 /* DTActionSheet.m */; };
 		3524B7AC19BE306700748AA4 /* RequestStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3524B7AB19BE306700748AA4 /* RequestStatusView.xib */; };
 		3524B7AF19BE307E00748AA4 /* RequestStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3524B7AE19BE307E00748AA4 /* RequestStatusView.m */; };
 		3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */; };
@@ -62,6 +63,8 @@
 		32A116B67CC8D69AA2D3015F /* Insertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Insertion.m; sourceTree = "<group>"; };
 		32A11D15A9B2B4F0974C8EF4 /* ArrayOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayOperation.h; sourceTree = "<group>"; };
 		32A11EB12888D3D5CF0D7DEE /* Deletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deletion.h; sourceTree = "<group>"; };
+		3520B2A719BE543C000DA7D6 /* DTActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTActionSheet.h; sourceTree = "<group>"; };
+		3520B2A819BE543C000DA7D6 /* DTActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTActionSheet.m; sourceTree = "<group>"; };
 		3524B7AB19BE306700748AA4 /* RequestStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestStatusView.xib; sourceTree = "<group>"; };
 		3524B7AD19BE307E00748AA4 /* RequestStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestStatusView.h; sourceTree = "<group>"; };
 		3524B7AE19BE307E00748AA4 /* RequestStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestStatusView.m; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 		3524B7A719BE076000748AA4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3520B2A719BE543C000DA7D6 /* DTActionSheet.h */,
+				3520B2A819BE543C000DA7D6 /* DTActionSheet.m */,
 				32A116B67CC8D69AA2D3015F /* Insertion.m */,
 				32A11212DE940EA34B81625D /* Insertion.h */,
 				32A11262E9249E5A01A0D16E /* Deletion.m */,
@@ -465,6 +470,7 @@
 				358B57C519B3920100D1F626 /* _Venue.m in Sources */,
 				355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */,
 				3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */,
+				3520B2A919BE543C000DA7D6 /* DTActionSheet.m in Sources */,
 				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,
 				358B57C819B395BA00D1F626 /* ModelManager.m in Sources */,
 				35CC6CD319BC6A6E003C6AB2 /* DataRequest.m in Sources */,
