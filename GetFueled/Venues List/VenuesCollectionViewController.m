@@ -121,12 +121,25 @@
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    [self.collectionView performBatchUpdates:^{
-        [self.updateOperations enumerateObjectsUsingBlock:^(ArrayOperation *operation, NSUInteger idx, BOOL *stop) {
-            [operation applyToCollectionView:self.collectionView];
+    dispatch_block_t roll = ^{
+        [self.collectionView performBatchUpdates:^{
+            [self.updateOperations enumerateObjectsUsingBlock:^(ArrayOperation *operation, NSUInteger idx, BOOL *stop) {
+                [operation applyToCollectionView:self.collectionView];
+            }];
+        } completion:^(BOOL finished) {
+            self.updateOperations = nil;
         }];
-    } completion:nil];
-    self.updateOperations = nil;
+    };
+    BOOL animated = [[self.updateOperations rx_foldInitialValue:@0 block:^NSNumber *(NSNumber *memo, ArrayOperation *op) {
+        BOOL positive = [op isKindOfClass:[Insertion class]];
+        return @([memo integerValue] + (positive?  +1 : -1));
+    }] integerValue] != 0;
+    
+    if (animated) {
+        roll();
+    } else {
+        [UIView performWithoutAnimation:roll];
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
