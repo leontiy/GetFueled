@@ -61,7 +61,12 @@
         @strongify(self);
         [self hidePageLoadingIndicator];
         [self createDataControllerIfNeeded];
-        if ([self.dataController.fetchedObjects count] == 0 && [result[@"totalResults"] integerValue] > 0) { // all blocked in current page
+        if ([[[result[@"venueIds"] rx_mapWithBlock:^Venue *(NSManagedObjectID *each) {
+                return (id)[self.context objectWithID:each];
+            }] rx_filterWithBlock:^BOOL(Venue *each) {
+                return ![each.blacklisted boolValue];
+            }] count] == 0)
+        { // all blocked in current page
             [self requestNextPage];
         }
     }];
