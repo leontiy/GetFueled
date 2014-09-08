@@ -24,6 +24,8 @@ static NSInteger kPageSize = 10;
 
 @property (nonatomic, strong) NSMutableArray *mutableObjects;
 @property (nonatomic, strong) FoursquareApi *api;
+@property (nonatomic) NSInteger nextPageOffset;
+@property (nonatomic) NSInteger totalResults;
 
 @end
 
@@ -42,6 +44,7 @@ static NSInteger kPageSize = 10;
     self = [super init];
     if (self) {
         self.api = [[FoursquareApi alloc] initWithDataStore:[ModelManager managedObjectStore]];
+        self.totalResults = INT_MAX;
     }
     return self;
 }
@@ -93,17 +96,31 @@ static NSInteger kPageSize = 10;
 }
 
 - (DataRequest *)refresh {
-    NSInteger offset = 0;
-    DataRequest *request = [self.api requestRecommendedVenuesWithOffset:offset limit:kPageSize];
+    self.nextPageOffset = 0;
+    return [self loadNextPage];
+}
+
+- (DataRequest *)loadNextPage {
+    if (self.totalResults - self.nextPageOffset <= 0) {
+        return nil;
+    }
+
+    NSInteger pageSize = MIN(kPageSize, self.totalResults - self.nextPageOffset);
+
+    DataRequest *request = [self.api requestRecommendedVenuesWithOffset:self.nextPageOffset limit:pageSize];
     [request succeeded:^(DataRequest *request, NSDictionary *result) {
+        self.totalResults = [result[@"totalResults"] integerValue];
         NSArray *venueIds = result[@"venueIds"];
         NSManagedObjectContext *updateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         updateContext.parentContext = self.mainContext;
+        const NSInteger offsetForThisUpdate = self.nextPageOffset;
+        self.nextPageOffset += [venueIds count];
         [updateContext performBlock:^{
-            [self deleteRecommendedItemsInContext:updateContext];
-            [self createRecommendedItemsWithVenueIds:venueIds offset:offset context:updateContext];
+            if (offsetForThisUpdate == 0) {
+                [self deleteRecommendedItemsInContext:updateContext];
+            }
+            [self createRecommendedItemsWithVenueIds:venueIds offset:offsetForThisUpdate context:updateContext];
         }];
-
     }];
     return request;
 }

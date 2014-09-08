@@ -14,5 +14,6 @@
 @property (nonatomic, readonly) NSManagedObjectContext *mainContext;
 + (instancetype)sharedModelManager;
 - (DataRequest *)refresh;
+- (DataRequest *)loadNextPage;
 
 @end

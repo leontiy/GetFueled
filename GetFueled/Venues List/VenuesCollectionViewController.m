@@ -150,7 +150,16 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     VenueCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VenueCell" forIndexPath:indexPath];
     cell.representedObject = [self.dataController.fetchedObjects[indexPath.row] venue];
+    if (indexPath.row == [self.dataController.fetchedObjects count] - 1) {
+        [self requestNextPage];
+    }
     return cell;
+}
+
+- (void)requestNextPage {
+    DataRequest *request = [[ModelManager sharedModelManager] loadNextPage];
+//    [request succeeded:<#^(DataRequest *request, id result)callback#>];
+//    [request failed:<#^(DataRequest *request, NSError *error)callback#>];
 }
 
 @end
