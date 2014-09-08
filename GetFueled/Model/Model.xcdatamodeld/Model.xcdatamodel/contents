@@ -23,7 +23,7 @@
         <attribute name="menuUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="openHorus" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="openNow" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <attribute name="openNow" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoUrlPrefix" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoUrlSuffix" optional="YES" attributeType="String" syncable="YES"/>
