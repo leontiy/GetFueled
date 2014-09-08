@@ -36,6 +36,7 @@
 		359C883519AE155000E67D29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 359C883319AE155000E67D29 /* InfoPlist.strings */; };
 		359C883719AE155000E67D29 /* GetFueledTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C883619AE155000E67D29 /* GetFueledTests.m */; };
 		359C884219AE1BF800E67D29 /* FoursquareApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C884119AE1BF800E67D29 /* FoursquareApi.m */; };
+		35CC6CD319BC6A6E003C6AB2 /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC6CD219BC6A6E003C6AB2 /* DataRequest.m */; };
 		C48904CC9536449DAB3FED81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B7E247AA464F18847186E8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,9 @@
 		359C883619AE155000E67D29 /* GetFueledTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetFueledTests.m; sourceTree = "<group>"; };
 		359C884019AE1BF800E67D29 /* FoursquareApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoursquareApi.h; path = Network/FoursquareApi.h; sourceTree = "<group>"; };
 		359C884119AE1BF800E67D29 /* FoursquareApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoursquareApi.m; path = Network/FoursquareApi.m; sourceTree = "<group>"; };
+		35BC98E519BCB82500FA2B9A /* DataRequest+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DataRequest+Internal.h"; path = "Network/DataRequest+Internal.h"; sourceTree = "<group>"; };
+		35CC6CD119BC6A6E003C6AB2 /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataRequest.h; path = Network/DataRequest.h; sourceTree = "<group>"; };
+		35CC6CD219BC6A6E003C6AB2 /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataRequest.m; path = Network/DataRequest.m; sourceTree = "<group>"; };
 		3D83C1201FC64079903F2870 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		81B7E247AA464F18847186E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -257,6 +261,9 @@
 				359C884119AE1BF800E67D29 /* FoursquareApi.m */,
 				358B57C619B395BA00D1F626 /* ModelManager.h */,
 				358B57C719B395BA00D1F626 /* ModelManager.m */,
+				35CC6CD119BC6A6E003C6AB2 /* DataRequest.h */,
+				35BC98E519BCB82500FA2B9A /* DataRequest+Internal.h */,
+				35CC6CD219BC6A6E003C6AB2 /* DataRequest.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -427,6 +434,7 @@
 				3554B4F919B239930075BB74 /* VenueTableViewCell.m in Sources */,
 				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,
 				358B57C819B395BA00D1F626 /* ModelManager.m in Sources */,
+				35CC6CD319BC6A6E003C6AB2 /* DataRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

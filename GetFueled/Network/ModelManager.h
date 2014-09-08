@@ -7,18 +7,6 @@
 //
 
 @class ModelManager;
-@class RKManagedObjectStore;
-
-
-@protocol DataRequester <NSObject>
-
-- (void)dataPoviderDidRefresh:(ModelManager *)provider;
-- (void)dataPovider:(ModelManager *)provider didUpdateObjectsAtIndices:(NSIndexSet *)indexSet;
-
-- (void)dataPovider:(ModelManager *)provider didFailToFetchDataWithError:(NSError *)error;
-
-@end
-
 
 @interface ModelManager : NSObject
 
@@ -26,7 +14,8 @@
 
 + (instancetype)sharedModelManager;
 
-- (void)requestItemAtIndex:(NSInteger)idx;
+- (BOOL)moreVenuesAvailable;
+- (void)requestMoreVenuesWithCompletionBlock:(dispatch_block_t)completion;
 - (void)refresh;
 
 @end

@@ -10,13 +10,11 @@
 
 
 @class RKManagedObjectStore;
-
+@class DataRequest;
 
 @interface FoursquareApi : NSObject
 
 - (instancetype)initWithDataStore:(RKManagedObjectStore*)store;
-- (void)requestVenuesWithOffset:(NSInteger)offset
-                        limit:(NSInteger)limit
-                    completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion;
+- (DataRequest *)requestRecommendedVenuesWithOffset:(NSInteger)offset limit:(NSInteger)limit;
 
 @end

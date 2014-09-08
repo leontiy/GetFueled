@@ -13,6 +13,7 @@
 #import <RXCollections/RXCollection.h>
 #import "Venue.h"
 #import "RecommendedItem.h"
+#import "DataRequest.h"
 
 @import CoreData;
 
@@ -102,34 +103,31 @@ static NSInteger kPageSize = 10;
 
 - (void)refresh {
     NSInteger offset = 0;
-    [self.api requestVenuesWithOffset:offset limit:kPageSize completion:^(NSArray *venues, NSInteger totalResults, NSError *error) {
-        if (error == nil) {
-            NSManagedObjectContext *updateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-            updateContext.parentContext = self.managedObjectStore.mainQueueManagedObjectContext;
-            NSArray *venueIds = [venues rx_mapWithBlock:^id(Venue *venue) {
-                NSAssert(![venue.objectID isTemporaryID], @"Venues must be persisted at this point.");
-                return venue.objectID;
+    DataRequest *request = [self.api requestRecommendedVenuesWithOffset:offset limit:kPageSize];
+    [request succeeded:^(DataRequest *request, NSDictionary *result) {
+        NSArray *venues = result[@"venues"];
+        NSManagedObjectContext *updateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        updateContext.parentContext = self.managedObjectStore.mainQueueManagedObjectContext;
+        NSArray *venueIds = [venues rx_mapWithBlock:^id(Venue *venue) {
+            NSAssert(![venue.objectID isTemporaryID], @"Venues must be persisted at this point.");
+            return venue.objectID;
+        }];
+        [updateContext performBlock:^{
+            [self deleteRecommendedItemsInContext:updateContext];
+            [venueIds enumerateObjectsUsingBlock:^(NSManagedObjectID *venueId, NSUInteger idx, BOOL *stop) {
+                RecommendedItem *item = [updateContext insertNewObjectForEntityForName:@"RecommendedItem"];
+                item.index = @(offset + idx);
+                item.venue = (Venue *)[updateContext objectWithID:venueId];
             }];
-            [updateContext performBlock:^{
-                [self deleteRecommendedItemsInContext:updateContext];
-                [venueIds enumerateObjectsUsingBlock:^(NSManagedObjectID *venueId, NSUInteger idx, BOOL *stop) {
-                    RecommendedItem *item = [updateContext insertNewObjectForEntityForName:@"RecommendedItem"];
-                    item.index = @(offset + idx);
-                    item.venue = (Venue *)[updateContext objectWithID:venueId];
-                }];
-                NSError *error;
-                BOOL saved = [updateContext save:&error];
-                if (!saved) {
-                    NSLog(@"Can't update recommended items: %@", [error localizedDescription]);
-                } else {
-                    // TODO post update
-                }
-            }];
-//            [self.requester dataPoviderDidRefresh:self];
-        } else {
-//            [self.requester dataPovider:self didFailToFetchDataWithError:error];
-        }
+            NSError *error;
+            BOOL saved = [updateContext save:&error];
+            if (!saved) {
+                NSLog(@"Can't update recommended items: %@", [error localizedDescription]);
+            }
+        }];
+
     }];
+    
 }
 
 - (void)deleteRecommendedItemsInContext:(NSManagedObjectContext *)context {

@@ -11,14 +11,20 @@
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData.h>
 #import <RXCollections/RXCollection.h>
+#import "DataRequest.h"
+#import "DataRequest+Internal.h"
+
+typedef id (*ResponseProcessorMethodIMP)(id, SEL, id, NSError **);
 
 static NSString *const kVenuesExplorePath = @"venues/explore";
+
 
 @interface FoursquareApi ()
 
 @property (nonatomic, strong) RKObjectManager *objectManager;
 
 @end
+
 
 @implementation FoursquareApi
 
@@ -96,10 +102,9 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
     return groupItemMapping;
 }
 
-- (void)requestVenuesWithOffset:(NSInteger)offset
-                          limit:(NSInteger)limit
-                     completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion
-{
+
+
+- (DataRequest *)requestRecommendedVenuesWithOffset:(NSInteger)offset limit:(NSInteger)limit {
     NSDictionary *params = @{@"ll" : @"40.724517, -73.997535", // NY office coordinates
                              @"price" : @"2,3,4",
                              @"openNow" : @1,
@@ -110,38 +115,51 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
                              @"client_id": @"CKFSMBEQFN3DAPXEAZ1423BNI0KF0TSH3LB4CWNY3VTU3ELS",
                              @"client_secret": @"MY3OZ0AUCRL1SGQMCQV2ACOVTPKZW1SIVYYUQBKG3TJURKDG", // would be nice if it were revokeable but it's a test app :)
                              @"v": @"20140827"};
-    [self.objectManager getObjectsAtPath:kVenuesExplorePath
-                              parameters:params
-                                 success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                     if (completion) {
-                                         NSInteger count = [mappingResult.dictionary[@"response"][@"totalResults"] integerValue];
-                                         NSArray *groups = mappingResult.dictionary[@"response.groups"];
-                                         // TODO: delete redundant mappings: I can filter the venues before mapping any entities
-                                         [self handleResponseWithGroups:groups
-                                                                  count:count
-                                                             completion:completion];
-                                     }
-                                 }
-                                 failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                     if (completion) {
-                                         completion(nil, 0, error);
-                                     }
-                                 }];
+    DataRequest *request = [self getObjectsAtPath:kVenuesExplorePath parameters:params responseProcessor:@selector(processVenuesResponse:error:)];
+    return request;
 }
 
-- (void)handleResponseWithGroups:(NSArray *)groups
-                           count:(NSInteger)count
-                      completion:(void(^)(NSArray *venues, NSInteger totalResults, NSError *error))completion
-{
+- (id)processVenuesResponse:(RKMappingResult *)mappingResult error:(NSError **)error {
+    NSInteger count = [mappingResult.dictionary[@"response"][@"totalResults"] integerValue];
+    NSArray *groups = mappingResult.dictionary[@"response.groups"];
+    // TODO: delete redundant mappings: I can filter the venues before mapping any entities
     NSArray *venues = [[[groups rx_mapWithBlock:^id(NSDictionary *group) {
         return [group valueForKeyPath:@"items.venue"];
     }] rx_foldInitialValue:[NSMutableArray array] block:^id(id memo, id next) {
         [memo addObjectsFromArray:next];
         return memo;
     }] copy];
-    if (completion) {
-        completion(venues, count, nil);
+    return @{ @"totalResults" : @(count), @"venues" : venues };
+}
+
+- (DataRequest *)getObjectsAtPath:(NSString *)path parameters:(NSDictionary *)parameters responseProcessor:(SEL)processor {
+    DataRequest *modelRequest = [DataRequest new];
+    
+    parameters = parameters ?: @{};
+    
+    NSParameterAssert(!!processor);
+    RKObjectRequestOperation *operation = [self.objectManager appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodGET path:path parameters:parameters];
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        ResponseProcessorMethodIMP method = (ResponseProcessorMethodIMP)[self methodForSelector:processor];
+        NSError *error;
+        modelRequest.result = method(self, processor, mappingResult, &error);
+        if (modelRequest.result != nil) {
+            [modelRequest didSucceed:modelRequest.result];
+        } else {
+            [modelRequest didFail:error];
+        }
     }
+    failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [modelRequest didFail:error];
+    }];
+    
+    // give the caller a chance to configure the request
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [modelRequest didStart];
+        [self.objectManager enqueueObjectRequestOperation:operation];
+    });
+    
+    return modelRequest;
 }
 
 @end
