@@ -32,9 +32,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView appearanceType="aqua" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-SG-IUg">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-SG-IUg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WOf-Dt-5Wr">
                                     <size key="itemSize" width="320" height="163"/>
@@ -114,170 +113,207 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-se-6SC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-se-6SC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pui-ZS-slR" userLabel="Image Overlay">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pui-ZS-slR" userLabel="Image Overlay">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <scrollView appearanceType="aqua" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6v-4Q-QO9">
+                                    <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6v-4Q-QO9">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxA-Gd-BNf" userLabel="Content View">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="527"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxA-Gd-BNf" userLabel="Content View">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="588"/>
                                                 <subviews>
-                                                    <mapView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="njS-uF-kXm">
+                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="njS-uF-kXm">
                                                         <rect key="frame" x="15" y="0.0" width="290" height="160"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="160" id="DHu-WW-yjf"/>
                                                             <constraint firstAttribute="width" constant="290" id="g50-AC-DfH"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <real key="value" value="1.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </mapView>
-                                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$  ★ 9.2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGx-Re-ae7">
-                                                        <rect key="frame" x="225" y="168" width="75" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$  ★ 9.2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGx-Re-ae7">
+                                                        <rect key="frame" x="230" y="168" width="75" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
-                                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Café" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbP-Da-mjE">
-                                                        <rect key="frame" x="15" y="168" width="36" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Café" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbP-Da-mjE">
+                                                        <rect key="frame" x="15" y="168" width="36" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
-                                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="242 Mott St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgi-Bf-QWd">
-                                                        <rect key="frame" x="15" y="197" width="91" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open until 11:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgi-Bf-QWd">
+                                                        <rect key="frame" x="15" y="198" width="152" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
-                                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open until 11:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7N-0X-Yqy">
-                                                        <rect key="frame" x="15" y="226" width="152" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My review:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtQ-1w-DQ1">
-                                                        <rect key="frame" x="15" y="255" width="85" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My review:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtQ-1w-DQ1">
+                                                        <rect key="frame" x="15" y="244" width="85" height="22"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
-                                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGr-EM-J7C">
-                                                        <rect key="frame" x="15" y="310" width="285" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGr-EM-J7C">
+                                                        <rect key="frame" x="15" y="317" width="290" height="44"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="OUY-eC-CTL"/>
+                                                        </constraints>
+                                                        <size key="titleShadowOffset" width="0.0" height="1"/>
                                                         <state key="normal" title="Call">
                                                             <color key="titleColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <real key="value" value="1.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="call:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="VNl-1W-OiT"/>
                                                         </connections>
                                                     </button>
-                                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-dW-iIU">
-                                                        <rect key="frame" x="15" y="352" width="285" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-dW-iIU">
+                                                        <rect key="frame" x="15" y="369" width="290" height="45"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="titleShadowOffset" width="0.0" height="1"/>
                                                         <state key="normal" title="Show Menu">
                                                             <color key="titleColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <real key="value" value="1.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="openMenu:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="Mlv-UD-rbe"/>
                                                         </connections>
                                                     </button>
-                                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlP-kf-fOV">
-                                                        <rect key="frame" x="15" y="394" width="285" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlP-kf-fOV">
+                                                        <rect key="frame" x="15" y="422" width="290" height="45"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="titleShadowOffset" width="0.0" height="1"/>
                                                         <state key="normal" title="Open Website">
                                                             <color key="titleColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <real key="value" value="1.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="openWebsite:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="rnS-Y1-yDT"/>
                                                         </connections>
                                                     </button>
-                                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-Od-CLc">
-                                                        <rect key="frame" x="15" y="436" width="285" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-Od-CLc">
+                                                        <rect key="frame" x="15" y="475" width="290" height="45"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="titleShadowOffset" width="0.0" height="1"/>
                                                         <state key="normal" title="Add to Favorites">
                                                             <color key="titleColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <real key="value" value="1.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="toggleSaved:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="yn1-TA-b53"/>
                                                         </connections>
                                                     </button>
-                                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-MI-43d">
-                                                        <rect key="frame" x="15" y="478" width="285" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-MI-43d">
+                                                        <rect key="frame" x="15" y="528" width="290" height="45"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="titleShadowOffset" width="0.0" height="1"/>
                                                         <state key="normal" title="Write a Review">
                                                             <color key="titleColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <real key="value" value="1.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <segue destination="Dda-QL-BM3" kind="modal" identifier="writeReview" id="Hie-3W-uQR"/>
                                                         </connections>
                                                     </button>
-                                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here goes the review." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="275" translatesAutoresizingMaskIntoConstraints="NO" id="TAM-0N-dey">
-                                                        <rect key="frame" x="30" y="284" width="275" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here goes the review." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="275" translatesAutoresizingMaskIntoConstraints="NO" id="TAM-0N-dey">
+                                                        <rect key="frame" x="30" y="274" width="275" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="242 Mott St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7N-0X-Yqy">
+                                                        <rect key="frame" x="214" y="198" width="91" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="TAM-0N-dey" firstAttribute="leading" secondItem="njS-uF-kXm" secondAttribute="leading" constant="15" id="0Qk-kd-3eb"/>
                                                     <constraint firstItem="nbP-Da-mjE" firstAttribute="top" secondItem="njS-uF-kXm" secondAttribute="bottom" constant="8" id="4yD-3s-vLa"/>
+                                                    <constraint firstItem="U7N-0X-Yqy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qgi-Bf-QWd" secondAttribute="trailing" constant="8" id="Ahs-Gy-R2J"/>
                                                     <constraint firstItem="TAM-0N-dey" firstAttribute="top" secondItem="DtQ-1w-DQ1" secondAttribute="bottom" constant="8" id="Bio-le-BwP"/>
-                                                    <constraint firstItem="QGr-EM-J7C" firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" constant="-5" id="CYk-No-jls"/>
+                                                    <constraint firstItem="QGr-EM-J7C" firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" id="CYk-No-jls"/>
                                                     <constraint firstAttribute="bottom" secondItem="1Mn-MI-43d" secondAttribute="bottom" constant="15" id="DpM-h4-KGM"/>
+                                                    <constraint firstItem="U7N-0X-Yqy" firstAttribute="baseline" secondItem="Qgi-Bf-QWd" secondAttribute="baseline" id="Eoc-O1-Khx"/>
                                                     <constraint firstItem="0gb-dW-iIU" firstAttribute="trailing" secondItem="QGr-EM-J7C" secondAttribute="trailing" id="Gyc-A5-mLW"/>
                                                     <constraint firstItem="mpx-Od-CLc" firstAttribute="trailing" secondItem="YlP-kf-fOV" secondAttribute="trailing" id="HKk-bZ-P5a"/>
-                                                    <constraint firstItem="gGx-Re-ae7" firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" constant="-5" id="Hsc-Px-fwp"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qgi-Bf-QWd" secondAttribute="trailing" constant="15" id="IX1-HQ-GuM"/>
+                                                    <constraint firstItem="gGx-Re-ae7" firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" id="Hsc-Px-fwp"/>
                                                     <constraint firstItem="mpx-Od-CLc" firstAttribute="top" secondItem="YlP-kf-fOV" secondAttribute="bottom" constant="8" id="IrD-jc-jrc"/>
-                                                    <constraint firstItem="QGr-EM-J7C" firstAttribute="top" secondItem="TAM-0N-dey" secondAttribute="bottom" constant="8" id="KiV-Df-vLF"/>
+                                                    <constraint firstItem="QGr-EM-J7C" firstAttribute="top" secondItem="TAM-0N-dey" secondAttribute="bottom" constant="24" id="KiV-Df-vLF"/>
                                                     <constraint firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" constant="15" id="Lkk-U4-GRO"/>
-                                                    <constraint firstItem="Qgi-Bf-QWd" firstAttribute="leading" secondItem="U7N-0X-Yqy" secondAttribute="leading" id="MY4-Or-hxh"/>
                                                     <constraint firstItem="0gb-dW-iIU" firstAttribute="leading" secondItem="YlP-kf-fOV" secondAttribute="leading" id="Mqt-r9-Qqm"/>
-                                                    <constraint firstItem="U7N-0X-Yqy" firstAttribute="top" secondItem="Qgi-Bf-QWd" secondAttribute="bottom" constant="8" id="aDn-sb-S9Z"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U7N-0X-Yqy" secondAttribute="trailing" constant="15" id="aMA-1S-zST"/>
+                                                    <constraint firstItem="mpx-Od-CLc" firstAttribute="height" secondItem="QGr-EM-J7C" secondAttribute="height" id="OdG-4j-YNq"/>
+                                                    <constraint firstItem="mpx-Od-CLc" firstAttribute="height" secondItem="0gb-dW-iIU" secondAttribute="height" id="RHe-NQ-s6N"/>
+                                                    <constraint firstItem="mpx-Od-CLc" firstAttribute="height" secondItem="1Mn-MI-43d" secondAttribute="height" id="SfO-Sr-yow"/>
+                                                    <constraint firstItem="DtQ-1w-DQ1" firstAttribute="top" secondItem="Qgi-Bf-QWd" secondAttribute="bottom" constant="24" id="VNS-lE-2Ay"/>
                                                     <constraint firstItem="gGx-Re-ae7" firstAttribute="baseline" secondItem="nbP-Da-mjE" secondAttribute="baseline" id="aSK-Kd-ItG"/>
                                                     <constraint firstItem="0gb-dW-iIU" firstAttribute="top" secondItem="QGr-EM-J7C" secondAttribute="bottom" constant="8" id="bUZ-eN-apo"/>
                                                     <constraint firstItem="nbP-Da-mjE" firstAttribute="leading" secondItem="Qgi-Bf-QWd" secondAttribute="leading" id="bkk-jy-c52"/>
                                                     <constraint firstItem="njS-uF-kXm" firstAttribute="top" secondItem="SxA-Gd-BNf" secondAttribute="top" id="cwz-ak-UB2"/>
                                                     <constraint firstItem="mpx-Od-CLc" firstAttribute="leading" secondItem="1Mn-MI-43d" secondAttribute="leading" id="fh9-Ot-30Q"/>
-                                                    <constraint firstItem="DtQ-1w-DQ1" firstAttribute="top" secondItem="U7N-0X-Yqy" secondAttribute="bottom" constant="8" id="h91-Z2-IcD"/>
                                                     <constraint firstItem="njS-uF-kXm" firstAttribute="leading" secondItem="nbP-Da-mjE" secondAttribute="leading" id="kVF-wU-UTc"/>
                                                     <constraint firstItem="1Mn-MI-43d" firstAttribute="top" secondItem="mpx-Od-CLc" secondAttribute="bottom" constant="8" id="ka0-tz-Cu2"/>
-                                                    <constraint firstItem="U7N-0X-Yqy" firstAttribute="leading" secondItem="DtQ-1w-DQ1" secondAttribute="leading" id="kay-Ok-P4H"/>
                                                     <constraint firstItem="Qgi-Bf-QWd" firstAttribute="top" secondItem="nbP-Da-mjE" secondAttribute="bottom" constant="8" id="kes-hs-NSx"/>
                                                     <constraint firstItem="mpx-Od-CLc" firstAttribute="leading" secondItem="YlP-kf-fOV" secondAttribute="leading" id="nGA-ml-Itt"/>
                                                     <constraint firstItem="njS-uF-kXm" firstAttribute="leading" secondItem="SxA-Gd-BNf" secondAttribute="leading" constant="15" id="nVJ-M0-ol6"/>
                                                     <constraint firstItem="QGr-EM-J7C" firstAttribute="leading" secondItem="njS-uF-kXm" secondAttribute="leading" id="p86-Y7-n2B"/>
+                                                    <constraint firstItem="DtQ-1w-DQ1" firstAttribute="leading" secondItem="Qgi-Bf-QWd" secondAttribute="leading" id="rQ1-0b-Xm7"/>
                                                     <constraint firstItem="mpx-Od-CLc" firstAttribute="trailing" secondItem="1Mn-MI-43d" secondAttribute="trailing" id="saD-Mt-zYC"/>
+                                                    <constraint firstItem="mpx-Od-CLc" firstAttribute="height" secondItem="YlP-kf-fOV" secondAttribute="height" id="upQ-1P-PHc"/>
+                                                    <constraint firstItem="njS-uF-kXm" firstAttribute="trailing" secondItem="U7N-0X-Yqy" secondAttribute="trailing" id="vaM-X7-5Xd"/>
                                                     <constraint firstItem="TAM-0N-dey" firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" id="vo8-JB-Xcu"/>
                                                     <constraint firstItem="0gb-dW-iIU" firstAttribute="trailing" secondItem="YlP-kf-fOV" secondAttribute="trailing" id="woe-0X-k5r"/>
                                                     <constraint firstItem="YlP-kf-fOV" firstAttribute="top" secondItem="0gb-dW-iIU" secondAttribute="bottom" constant="8" id="yLq-9t-JMn"/>
                                                     <constraint firstItem="0gb-dW-iIU" firstAttribute="leading" secondItem="QGr-EM-J7C" secondAttribute="leading" id="yV3-Bf-beV"/>
-                                                    <constraint firstItem="gGx-Re-ae7" firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" constant="-5" id="zhI-fq-sKD"/>
+                                                    <constraint firstItem="gGx-Re-ae7" firstAttribute="trailing" secondItem="njS-uF-kXm" secondAttribute="trailing" id="zhI-fq-sKD"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -314,11 +350,11 @@
                     <navigationItem key="navigationItem" id="Vtt-Bl-6Iu"/>
                     <connections>
                         <outlet property="addToFavoritesButton" destination="mpx-Od-CLc" id="wC8-Cg-XIY"/>
-                        <outlet property="addressLabel" destination="Qgi-Bf-QWd" id="lpx-Qu-pBN"/>
+                        <outlet property="addressLabel" destination="U7N-0X-Yqy" id="6gG-mP-Lpc"/>
                         <outlet property="backgroundImageView" destination="JqS-se-6SC" id="LLm-Sr-YWk"/>
                         <outlet property="categoryLabel" destination="nbP-Da-mjE" id="6va-g1-OIT"/>
                         <outlet property="mapView" destination="njS-uF-kXm" id="j5c-e8-4uS"/>
-                        <outlet property="openNowLabel" destination="U7N-0X-Yqy" id="1jv-pI-gO0"/>
+                        <outlet property="openNowLabel" destination="Qgi-Bf-QWd" id="L87-dl-fVP"/>
                         <outlet property="ratingsLabel" destination="gGx-Re-ae7" id="sGk-pi-LNh"/>
                         <outlet property="reviewLabel" destination="TAM-0N-dey" id="UEa-oe-bTd"/>
                     </connections>
@@ -354,9 +390,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrr-vL-8Mo">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrr-vL-8Mo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                 <color key="textColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -400,6 +435,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xuB-Bs-4JN"/>
+        <segue reference="QA5-yI-OKJ"/>
     </inferredMetricsTieBreakers>
 </document>

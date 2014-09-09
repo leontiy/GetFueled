@@ -70,6 +70,8 @@ static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
     DataRequest *request = [[ModelManager sharedModelManager] loadNextPage];
     if (request) {
         [self showPageLoadingIndicator];
+    } else {
+        [self showStatusView];
     }
     @weakify(self);
     [request succeeded:^(DataRequest *request, id result) {
@@ -131,12 +133,11 @@ static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
 - (void)hidePageLoadingIndicator {
     [self.pageLoadingIndicator removeFromSuperview];
     self.pageLoadingIndicator = nil;
-    
-    [self showStatusView];
 }
 
 - (void)showStatusView {
     self.requestStatusView = (id)[self loadBottomViewFromNibNamed:@"RequestStatusView"];
+    self.requestStatusView.textLabel.text = @"Do you want to eat at all?";
 }
 
 - (void)hideStatusView {
