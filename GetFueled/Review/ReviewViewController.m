@@ -11,6 +11,7 @@
 #import <RestKit/CoreData.h>
 #import "Venue.h"
 #import "CustomReview.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface ReviewViewController ()
 
@@ -41,7 +42,7 @@
     NSError *error;
     BOOL saved = [review.managedObjectContext saveToPersistentStore:&error];
     if (!saved) {
-        // TODO <# warn user #> do not dismiss
+        [SVProgressHUD showErrorWithStatus:@"Could not save! Copy text to preserve edits."];
     } else {
         [self performSegueWithIdentifier:@"unwindOnDone" sender:self];
     }
