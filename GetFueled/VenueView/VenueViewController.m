@@ -50,9 +50,13 @@
     [self.mapView addAnnotation:self.venue];
     CLLocationDegrees kDeltaForStreetsVisible = 0.001;
     [self.mapView setRegion:regionContatingAnnotations(@[ self.venue ], kDeltaForStreetsVisible)];
-    self.mapView.showsBuildings = YES;
+    if ([self.mapView respondsToSelector:@selector(setShowsBuildings:)]) {
+        self.mapView.showsBuildings = YES;
+    }
+    if ([self.mapView respondsToSelector:@selector(setShowsPointsOfInterest:)]) {
+        self.mapView.showsPointsOfInterest = YES;
+    }
     self.mapView.showsUserLocation = YES;
-    self.mapView.showsPointsOfInterest = YES;
     
     self.categoryLabel.hidden = [self.venue.categories count] == 0;
     VenueCategory *category = self.venue.categories.anyObject;
