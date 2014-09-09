@@ -6,7 +6,6 @@
 const struct VenueAttributes VenueAttributes = {
 	.address = @"address",
 	.blacklisted = @"blacklisted",
-	.customRating = @"customRating",
 	.id = @"id",
 	.latitude = @"latitude",
 	.longitude = @"longitude",
@@ -60,11 +59,6 @@ const struct VenueFetchedProperties VenueFetchedProperties = {
 	
 	if ([key isEqualToString:@"blacklistedValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"blacklisted"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
-	if ([key isEqualToString:@"customRatingValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"customRating"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -122,32 +116,6 @@ const struct VenueFetchedProperties VenueFetchedProperties = {
 
 - (void)setPrimitiveBlacklistedValue:(BOOL)value_ {
 	[self setPrimitiveBlacklisted:[NSNumber numberWithBool:value_]];
-}
-
-
-
-
-
-@dynamic customRating;
-
-
-
-- (int16_t)customRatingValue {
-	NSNumber *result = [self customRating];
-	return [result shortValue];
-}
-
-- (void)setCustomRatingValue:(int16_t)value_ {
-	[self setCustomRating:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveCustomRatingValue {
-	NSNumber *result = [self primitiveCustomRating];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveCustomRatingValue:(int16_t)value_ {
-	[self setPrimitiveCustomRating:[NSNumber numberWithShort:value_]];
 }
 
 

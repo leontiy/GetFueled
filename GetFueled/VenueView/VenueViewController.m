@@ -14,6 +14,8 @@
 #import "VenueCategory.h"
 #import "MKMapUtils.h"
 #import "NSNumber+Foursquare.h"
+#import "CustomReview.h"
+#import "ReviewViewController.h"
 
 
 @interface Venue (MKAnnotation) <MKAnnotation>
@@ -29,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *openNowLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
 
 @end
 
@@ -70,6 +73,11 @@
                                              failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                                  // ignore
                                              }];
+    [self updateReview];
+}
+
+- (void)updateReview {
+    self.reviewLabel.text = self.venue.customReview.text ?: @"No review yet";
 }
 
 - (IBAction)call:(id)sender {
@@ -88,6 +96,19 @@
 }
 
 - (IBAction)toggleSaved:(id)sender {
+}
+
+- (IBAction)dismissReviewEditor:(UIStoryboardSegue *)segue {
+    [self updateReview];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"writeReview"]) {
+        UINavigationController *navController = (id)segue.destinationViewController;
+        ReviewViewController *reviewController = navController.viewControllers[0];
+        NSAssert([reviewController isKindOfClass:[ReviewViewController class]], @"");
+        reviewController.venue = self.venue;
+    }
 }
 
 static NSString *const kAnnotationReuseId = @"FueledAnnotation";

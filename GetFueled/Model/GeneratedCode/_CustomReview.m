@@ -4,7 +4,6 @@
 #import "_CustomReview.h"
 
 const struct CustomReviewAttributes CustomReviewAttributes = {
-	.rating = @"rating",
 	.text = @"text",
 };
 
@@ -41,40 +40,9 @@ const struct CustomReviewFetchedProperties CustomReviewFetchedProperties = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
-	if ([key isEqualToString:@"ratingValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"rating"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
 
 	return keyPaths;
 }
-
-
-
-
-@dynamic rating;
-
-
-
-- (int16_t)ratingValue {
-	NSNumber *result = [self rating];
-	return [result shortValue];
-}
-
-- (void)setRatingValue:(int16_t)value_ {
-	[self setRating:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveRatingValue {
-	NSNumber *result = [self primitiveRating];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveRatingValue:(int16_t)value_ {
-	[self setPrimitiveRating:[NSNumber numberWithShort:value_]];
-}
-
 
 
 

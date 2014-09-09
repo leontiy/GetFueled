@@ -5,7 +5,6 @@
 
 
 extern const struct CustomReviewAttributes {
-	__unsafe_unretained NSString *rating;
 	__unsafe_unretained NSString *text;
 } CustomReviewAttributes;
 
@@ -20,7 +19,6 @@ extern const struct CustomReviewFetchedProperties {
 
 
 
-
 @interface CustomReviewID : NSManagedObjectID {}
 @end
 
@@ -29,20 +27,6 @@ extern const struct CustomReviewFetchedProperties {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (CustomReviewID*)objectID;
-
-
-
-
-
-@property (nonatomic, strong) NSNumber* rating;
-
-
-
-@property int16_t ratingValue;
-- (int16_t)ratingValue;
-- (void)setRatingValue:(int16_t)value_;
-
-//- (BOOL)validateRating:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -73,15 +57,6 @@ extern const struct CustomReviewFetchedProperties {
 @end
 
 @interface _CustomReview (CoreDataGeneratedPrimitiveAccessors)
-
-
-- (NSNumber*)primitiveRating;
-- (void)setPrimitiveRating:(NSNumber*)value;
-
-- (int16_t)primitiveRatingValue;
-- (void)setPrimitiveRatingValue:(int16_t)value_;
-
-
 
 
 - (NSString*)primitiveText;

@@ -7,7 +7,6 @@
 extern const struct VenueAttributes {
 	__unsafe_unretained NSString *address;
 	__unsafe_unretained NSString *blacklisted;
-	__unsafe_unretained NSString *customRating;
 	__unsafe_unretained NSString *id;
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
@@ -37,7 +36,6 @@ extern const struct VenueFetchedProperties {
 @class NSManagedObject;
 @class CustomReview;
 @class RecommendedItem;
-
 
 
 
@@ -87,20 +85,6 @@ extern const struct VenueFetchedProperties {
 - (void)setBlacklistedValue:(BOOL)value_;
 
 //- (BOOL)validateBlacklisted:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) NSNumber* customRating;
-
-
-
-@property int16_t customRatingValue;
-- (int16_t)customRatingValue;
-- (void)setCustomRatingValue:(int16_t)value_;
-
-//- (BOOL)validateCustomRating:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -311,15 +295,6 @@ extern const struct VenueFetchedProperties {
 
 - (BOOL)primitiveBlacklistedValue;
 - (void)setPrimitiveBlacklistedValue:(BOOL)value_;
-
-
-
-
-- (NSNumber*)primitiveCustomRating;
-- (void)setPrimitiveCustomRating:(NSNumber*)value;
-
-- (int16_t)primitiveCustomRatingValue;
-- (void)setPrimitiveCustomRatingValue:(int16_t)value_;
 
 
 
