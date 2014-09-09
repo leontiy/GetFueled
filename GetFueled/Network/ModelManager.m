@@ -111,8 +111,13 @@ static NSInteger kPageSize = 10;
     [request succeeded:^(DataRequest *request, NSDictionary *result) {
         self.totalResults = [result[@"totalResults"] integerValue];
         NSArray *venueIds = result[@"venueIds"];
-        NSManagedObjectContext *updateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        updateContext.parentContext = self.mainContext;
+        NSManagedObjectContext *updateContext;
+        if (GF_SYSTEM_VERSION_LESS_THAN(@"7.0")) { // fixes random crash with background processing of deletions
+            updateContext = self.mainContext;
+        } else {
+            updateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+            updateContext.parentContext = self.mainContext;
+        }
         const NSInteger offsetForThisUpdate = self.nextPageOffset;
         self.nextPageOffset += [venueIds count];
         [updateContext performBlock:^{
