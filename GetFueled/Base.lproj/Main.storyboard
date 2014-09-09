@@ -35,7 +35,7 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-SG-IUg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WOf-Dt-5Wr">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="WOf-Dt-5Wr">
                                     <size key="itemSize" width="320" height="163"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -57,7 +57,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recommended Venues" id="1TK-TD-8RM">
-                        <barButtonItem key="leftBarButtonItem" image="favorites-icon" style="plain" id="a8V-N2-bdm">
+                        <barButtonItem key="leftBarButtonItem" image="favorites-icon" id="a8V-N2-bdm">
                             <connections>
                                 <segue destination="JVI-xl-FsE" kind="push" identifier="showFavorites" id="6uS-i8-XEk"/>
                             </connections>
@@ -80,7 +80,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8jg-ZZ-Z8A">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="8jg-ZZ-Z8A">
                             <size key="itemSize" width="320" height="163"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -430,7 +430,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="favorites-icon" width="24" height="24"/>
+        <image name="favorites-icon" width="20" height="19"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -438,6 +438,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="QA5-yI-OKJ"/>
+        <segue reference="xuB-Bs-4JN"/>
     </inferredMetricsTieBreakers>
 </document>
