@@ -460,7 +460,7 @@
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="j6v-4Q-QO9" secondAttribute="bottom" id="RX4-IM-AXG"/>
                                     <constraint firstAttribute="trailing" secondItem="j6v-4Q-QO9" secondAttribute="trailing" id="YWV-1s-pak"/>

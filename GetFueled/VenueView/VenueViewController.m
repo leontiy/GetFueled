@@ -9,6 +9,7 @@
 #import "VenueViewController.h"
 @import CoreLocation;
 @import MapKit;
+@import CoreImage;
 #import <AFNetworking/AFNetworking.h>
 #import "Venue.h"
 #import "VenueCategory.h"
@@ -156,10 +157,19 @@ static NSString *const kAnnotationReuseId = @"FueledAnnotation";
     CIImage *inputImage = [CIImage imageWithCGImage:sourceImage.CGImage];
     
     //  Setting up Gaussian Blur
-    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
-    [filter setValue:inputImage forKey:kCIInputImageKey];
-    [filter setValue:[NSNumber numberWithFloat:20.0f] forKey:@"inputRadius"];
-    CIImage *result = [filter valueForKey:kCIOutputImageKey];
+    CIFilter *vibrance = [CIFilter filterWithName:@"CIVibrance"];
+    [vibrance setValue:inputImage forKey:kCIInputImageKey];
+    [vibrance setValue:@1.0f forKey:@"inputAmount"];
+    
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    CIFilter *clamp = [CIFilter filterWithName:@"CIAffineClamp"];
+    [clamp setValue:vibrance.outputImage forKey:@"inputImage"];
+    [clamp setValue:[NSValue valueWithBytes:&transform objCType:@encode(CGAffineTransform)] forKey:@"inputTransform"];
+    
+    CIFilter *blur = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [blur setValue:clamp.outputImage forKey:kCIInputImageKey];
+    [blur setValue:@10.0f forKey:@"inputRadius"];
+    CIImage *result = [blur valueForKey:kCIOutputImageKey];
     
     /*  CIGaussianBlur has a tendency to shrink the image a little, this ensures it matches
      *  up exactly to the bounds of our original image */
