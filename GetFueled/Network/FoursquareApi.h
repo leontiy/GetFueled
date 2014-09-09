@@ -12,6 +12,10 @@
 @class RKManagedObjectStore;
 @class DataRequest;
 
+
+/**
+ Handles networking and data parsing.
+*/
 @interface FoursquareApi : NSObject
 
 - (instancetype)initWithDataStore:(RKManagedObjectStore*)store;

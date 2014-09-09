@@ -8,7 +8,10 @@
 
 @class DataRequest;
 
-
+/**
+ *  Owns Core data stack, manages local data representation with regard to Foursquare API.
+ *  View Controllers perform simple local model operations themselves (review, favorites).
+ */
 @interface ModelManager : NSObject
 
 @property (nonatomic, readonly) NSManagedObjectContext *mainContext;

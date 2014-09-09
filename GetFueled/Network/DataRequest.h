@@ -14,7 +14,9 @@ typedef void (^DataRequestCallback)(DataRequest *request);
 typedef void (^DataSuccessCallback)(DataRequest *request, id result);
 typedef void (^DataErrorCallback)(DataRequest *request, NSError *error);
 
-
+/**
+ *  Encapsulates asynchronous operations and its
+ */
 @interface DataRequest : NSObject
 
 @property(nonatomic) BOOL userInitiated;
