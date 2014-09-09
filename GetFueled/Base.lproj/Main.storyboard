@@ -57,7 +57,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recommended Venues" id="1TK-TD-8RM">
-                        <barButtonItem key="leftBarButtonItem" title="Saved" id="a8V-N2-bdm">
+                        <barButtonItem key="leftBarButtonItem" image="favorites-icon" style="plain" id="a8V-N2-bdm">
                             <connections>
                                 <segue destination="JVI-xl-FsE" kind="push" identifier="showFavorites" id="6uS-i8-XEk"/>
                             </connections>
@@ -429,6 +429,9 @@
             <point key="canvasLocation" x="1464" y="403"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorites-icon" width="24" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

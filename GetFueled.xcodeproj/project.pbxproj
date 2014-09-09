@@ -31,6 +31,9 @@
 		358B57DB19B50CF000D1F626 /* _CustomReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D619B50CF000D1F626 /* _CustomReview.m */; };
 		358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D819B50CF000D1F626 /* _RecommendedItem.m */; };
 		358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57DA19B50CF000D1F626 /* _VenueCategory.m */; };
+		358EC80C19BEE26200E66B8F /* AppearanceCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 358EC80B19BEE26200E66B8F /* AppearanceCustomization.m */; };
+		358EC81319BEF1A400E66B8F /* fueled-sans-semi-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 358EC80F19BEF1A400E66B8F /* fueled-sans-semi-bold.ttf */; };
+		358EC81419BEF1A400E66B8F /* fueled-sans-cond-med.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 358EC81019BEF1A400E66B8F /* fueled-sans-cond-med.ttf */; };
 		35983D7119BEB40000625F0A /* VenueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35983D7019BEB40000625F0A /* VenueCollectionViewCell.xib */; };
 		35983D7519BEB81500625F0A /* FavoritesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35983D7419BEB81500625F0A /* FavoritesCollectionViewController.m */; };
 		359C880C19AE155000E67D29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880B19AE155000E67D29 /* Foundation.framework */; };
@@ -108,6 +111,10 @@
 		358B57D819B50CF000D1F626 /* _RecommendedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RecommendedItem.m; sourceTree = "<group>"; };
 		358B57D919B50CF000D1F626 /* _VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _VenueCategory.h; sourceTree = "<group>"; };
 		358B57DA19B50CF000D1F626 /* _VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _VenueCategory.m; sourceTree = "<group>"; };
+		358EC80A19BEE26200E66B8F /* AppearanceCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceCustomization.h; sourceTree = "<group>"; };
+		358EC80B19BEE26200E66B8F /* AppearanceCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceCustomization.m; sourceTree = "<group>"; };
+		358EC80F19BEF1A400E66B8F /* fueled-sans-semi-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fueled-sans-semi-bold.ttf"; sourceTree = "<group>"; };
+		358EC81019BEF1A400E66B8F /* fueled-sans-cond-med.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fueled-sans-cond-med.ttf"; sourceTree = "<group>"; };
 		35983D7019BEB40000625F0A /* VenueCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCollectionViewCell.xib; sourceTree = "<group>"; };
 		35983D7319BEB81500625F0A /* FavoritesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCollectionViewController.h; sourceTree = "<group>"; };
 		35983D7419BEB81500625F0A /* FavoritesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCollectionViewController.m; sourceTree = "<group>"; };
@@ -213,6 +220,17 @@
 			path = "Venues List";
 			sourceTree = "<group>";
 		};
+		356408BB19BEE1FC00DACA7B /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				358EC80F19BEF1A400E66B8F /* fueled-sans-semi-bold.ttf */,
+				358EC81019BEF1A400E66B8F /* fueled-sans-cond-med.ttf */,
+				358EC80A19BEE26200E66B8F /* AppearanceCustomization.h */,
+				358EC80B19BEE26200E66B8F /* AppearanceCustomization.m */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
 		358B57B719B38B0300D1F626 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +308,7 @@
 		359C881119AE155000E67D29 /* GetFueled */ = {
 			isa = PBXGroup;
 			children = (
+				356408BB19BEE1FC00DACA7B /* Appearance */,
 				3524B7A719BE076000748AA4 /* Utilities */,
 				359C884319AE23D800E67D29 /* Networking */,
 				358B57B719B38B0300D1F626 /* Model */,
@@ -450,9 +469,11 @@
 				359C882419AE155000E67D29 /* Images.xcassets in Resources */,
 				3524B7AC19BE306700748AA4 /* RequestStatusView.xib in Resources */,
 				35983D7119BEB40000625F0A /* VenueCollectionViewCell.xib in Resources */,
+				358EC81419BEF1A400E66B8F /* fueled-sans-cond-med.ttf in Resources */,
 				359C881619AE155000E67D29 /* InfoPlist.strings in Resources */,
 				359C881F19AE155000E67D29 /* Main.storyboard in Resources */,
 				355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */,
+				358EC81319BEF1A400E66B8F /* fueled-sans-semi-bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +542,7 @@
 			files = (
 				358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */,
 				358B57D219B50CE300D1F626 /* CustomReview.m in Sources */,
+				358EC80C19BEE26200E66B8F /* AppearanceCustomization.m in Sources */,
 				3524B7AF19BE307E00748AA4 /* RequestStatusView.m in Sources */,
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
 				35722E0E19B9CC3100506522 /* VenuesCollectionViewController.m in Sources */,

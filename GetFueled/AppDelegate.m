@@ -7,12 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "FoursquareApi.h"
+#import "AppearanceCustomization.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[AppearanceCustomization new] applyGeneralCustomizations];
     return YES;
 }
 							
