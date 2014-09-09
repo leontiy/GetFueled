@@ -7,6 +7,7 @@
 //
 
 #import "VenueCollectionViewCell.h"
+@import QuartzCore;
 #import <AFNetworking/AFNetworking.h>
 #import "Venue.h"
 #import "VenueCategory.h"
@@ -17,6 +18,7 @@
 
 @interface VenueCollectionViewCell ()
 
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *textBoxes;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -28,6 +30,14 @@
 
 
 @implementation VenueCollectionViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self.textBoxes enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.frame].CGPath;
+    }];
+}
 
 - (void)setRepresentedObject:(Venue *)representedObject {
     _representedObject = representedObject;

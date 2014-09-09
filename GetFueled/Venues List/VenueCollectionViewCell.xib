@@ -21,15 +21,16 @@
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-M9-rSz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                             </imageView>
                             <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfQ-q6-rjB" userLabel="Category container">
                                 <rect key="frame" x="261" y="15" width="44" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Café" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFY-Y7-BN9" userLabel="Category label">
+                                    <label appearanceType="aqua" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Café" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFY-Y7-BN9" userLabel="Category label">
                                         <rect key="frame" x="4" y="0.0" width="36" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -58,7 +59,7 @@
                                     <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Café Gitane" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko8-Z0-CYU" userLabel="Name label">
                                         <rect key="frame" x="4" y="0.0" width="110" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.68235296010000002" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -84,10 +85,10 @@
                                 <rect key="frame" x="223" y="80" width="82" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="$$  ★ 9.2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shj-ss-hLo" userLabel="Ratings label">
+                                    <label appearanceType="aqua" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="$$  ★ 9.2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shj-ss-hLo" userLabel="Ratings label">
                                         <rect key="frame" x="4" y="0.0" width="74" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -113,10 +114,10 @@
                                 <rect key="frame" x="207" y="104" width="98" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="242 Mott St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlA-yA-7BJ" userLabel="Address label">
+                                    <label appearanceType="aqua" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="242 Mott St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlA-yA-7BJ" userLabel="Address label">
                                         <rect key="frame" x="4" y="0.0" width="90" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -142,10 +143,10 @@
                                 <rect key="frame" x="147" y="128" width="158" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Open until 11:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-8i-OPS" userLabel="Open until label">
+                                    <label appearanceType="aqua" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Open until 11:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-8i-OPS" userLabel="Open until label">
                                         <rect key="frame" x="4" y="0.0" width="150" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -203,6 +204,7 @@
                 <outlet property="nameLabel" destination="Ko8-Z0-CYU" id="x1x-bf-q5K"/>
                 <outlet property="photoView" destination="1jn-M9-rSz" id="8Qc-uQ-L1S"/>
                 <outlet property="ratingsLabel" destination="shj-ss-hLo" id="vsj-q8-QAM"/>
+                <outletCollection property="textBoxes" destination="0gB-RX-nxH" id="lyv-pe-4av"/>
             </connections>
         </collectionViewCell>
     </objects>
