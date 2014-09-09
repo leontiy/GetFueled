@@ -60,7 +60,7 @@
                     <navigationItem key="navigationItem" title="Recommended Venues" id="1TK-TD-8RM">
                         <barButtonItem key="leftBarButtonItem" title="Saved" id="a8V-N2-bdm">
                             <connections>
-                                <segue destination="8Dj-YY-AAf" kind="push" id="hcc-HS-OCD"/>
+                                <segue destination="JVI-xl-FsE" kind="push" identifier="showFavorites" id="6uS-i8-XEk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -72,6 +72,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uo8-Yb-3Uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5" y="403"/>
+        </scene>
+        <!--Favorites Collection View Controller - Favorites-->
+        <scene sceneID="8xE-G6-but">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="JVI-xl-FsE" customClass="FavoritesCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="aeS-6z-zxe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8jg-ZZ-Z8A">
+                            <size key="itemSize" width="320" height="163"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="JVI-xl-FsE" id="fnN-AB-bIe"/>
+                            <outlet property="delegate" destination="JVI-xl-FsE" id="Mmr-nJ-ABa"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Favorites" id="bzX-WC-HJ8"/>
+                    <connections>
+                        <segue destination="Ktn-E0-dCe" kind="push" identifier="showVenue" id="xuB-Bs-4JN"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYL-5y-5c0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="1130"/>
         </scene>
         <!--Venue View Controller-->
         <scene sceneID="saG-vU-jGx">
@@ -296,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgP-ZQ-cT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="403"/>
+            <point key="canvasLocation" x="696" y="403"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JCP-cv-j0M">
@@ -311,7 +340,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIG-FX-FjM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="403"/>
+            <point key="canvasLocation" x="1070" y="403"/>
         </scene>
         <!--Review View Controller - Write a Review-->
         <scene sceneID="qh7-po-qRg">
@@ -362,53 +391,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mT-dK-JT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Nob-Lu-ieT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="403"/>
-        </scene>
-        <!--Venues Collection View Controller - Saved Venues-->
-        <scene sceneID="k23-4e-DJF">
-            <objects>
-                <viewController id="8Dj-YY-AAf" customClass="VenuesCollectionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5kW-a1-72o"/>
-                        <viewControllerLayoutGuide type="bottom" id="fyL-5v-yV7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qng-Uu-gjr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <collectionView appearanceType="aqua" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Hw-pj-Pt7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aSz-bH-fDG">
-                                    <size key="itemSize" width="320" height="163"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="8Dj-YY-AAf" id="k4j-Mv-u0F"/>
-                                    <outlet property="delegate" destination="8Dj-YY-AAf" id="bXB-Jk-mfb"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1Hw-pj-Pt7" secondAttribute="trailing" id="CkZ-I7-9SI"/>
-                            <constraint firstItem="fyL-5v-yV7" firstAttribute="top" secondItem="1Hw-pj-Pt7" secondAttribute="bottom" id="dyq-qY-chO"/>
-                            <constraint firstItem="1Hw-pj-Pt7" firstAttribute="leading" secondItem="qng-Uu-gjr" secondAttribute="leading" id="ghp-CI-7JW"/>
-                            <constraint firstItem="1Hw-pj-Pt7" firstAttribute="top" secondItem="qng-Uu-gjr" secondAttribute="top" id="xZe-0k-5TW"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Saved Venues" id="5S9-zH-k9M"/>
-                    <connections>
-                        <outlet property="collectionView" destination="1Hw-pj-Pt7" id="Abk-uC-2hx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T8U-jv-nD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="431" y="1098"/>
+            <point key="canvasLocation" x="1464" y="403"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -416,4 +399,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="xuB-Bs-4JN"/>
+    </inferredMetricsTieBreakers>
 </document>

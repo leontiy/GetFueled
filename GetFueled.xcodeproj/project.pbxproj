@@ -32,6 +32,7 @@
 		358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D819B50CF000D1F626 /* _RecommendedItem.m */; };
 		358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57DA19B50CF000D1F626 /* _VenueCategory.m */; };
 		35983D7119BEB40000625F0A /* VenueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35983D7019BEB40000625F0A /* VenueCollectionViewCell.xib */; };
+		35983D7519BEB81500625F0A /* FavoritesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35983D7419BEB81500625F0A /* FavoritesCollectionViewController.m */; };
 		359C880C19AE155000E67D29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880B19AE155000E67D29 /* Foundation.framework */; };
 		359C880E19AE155000E67D29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880D19AE155000E67D29 /* CoreGraphics.framework */; };
 		359C881019AE155000E67D29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880F19AE155000E67D29 /* UIKit.framework */; };
@@ -108,6 +109,8 @@
 		358B57D919B50CF000D1F626 /* _VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _VenueCategory.h; sourceTree = "<group>"; };
 		358B57DA19B50CF000D1F626 /* _VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _VenueCategory.m; sourceTree = "<group>"; };
 		35983D7019BEB40000625F0A /* VenueCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCollectionViewCell.xib; sourceTree = "<group>"; };
+		35983D7319BEB81500625F0A /* FavoritesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCollectionViewController.h; sourceTree = "<group>"; };
+		35983D7419BEB81500625F0A /* FavoritesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCollectionViewController.m; sourceTree = "<group>"; };
 		359C880819AE155000E67D29 /* GetFueled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetFueled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359C880B19AE155000E67D29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359C880D19AE155000E67D29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -242,6 +245,15 @@
 			path = GeneratedCode;
 			sourceTree = "<group>";
 		};
+		35983D7219BEB7A100625F0A /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				35983D7319BEB81500625F0A /* FavoritesCollectionViewController.h */,
+				35983D7419BEB81500625F0A /* FavoritesCollectionViewController.m */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		359C87FF19AE155000E67D29 = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +295,7 @@
 				358B57B719B38B0300D1F626 /* Model */,
 				3554B4F619B2393E0075BB74 /* Venues List */,
 				3520B2AA19BE64F9000DA7D6 /* VenueView */,
+				35983D7219BEB7A100625F0A /* Favorites */,
 				35BED1D519BE889900F90ECD /* Review */,
 				359C881A19AE155000E67D29 /* AppDelegate.h */,
 				359C881B19AE155000E67D29 /* AppDelegate.m */,
@@ -525,6 +538,7 @@
 				355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */,
 				3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */,
 				3520B2A919BE543C000DA7D6 /* DTActionSheet.m in Sources */,
+				35983D7519BEB81500625F0A /* FavoritesCollectionViewController.m in Sources */,
 				358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */,
 				358B57C819B395BA00D1F626 /* ModelManager.m in Sources */,
 				35CC6CD319BC6A6E003C6AB2 /* DataRequest.m in Sources */,

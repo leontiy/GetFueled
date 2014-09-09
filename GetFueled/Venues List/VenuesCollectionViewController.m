@@ -23,6 +23,7 @@
 #import "Deletion.h"
 #import "DTActionSheet.h"
 #import "VenueViewController.h"
+#import "FavoritesCollectionViewController.h"
 
 
 static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
@@ -59,6 +60,9 @@ static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
     if ([segue.identifier isEqualToString:@"showVenue"]) {
         VenueViewController *vc = segue.destinationViewController;
         vc.venue = [sender representedObject];
+    } else if ([segue.identifier isEqualToString:@"showFavorites"]) {
+        FavoritesCollectionViewController *favController = segue.destinationViewController;
+        favController.context = self.context;
     }
 }
 
