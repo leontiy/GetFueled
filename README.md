@@ -2,6 +2,7 @@ GetFueled
 =========
 
 The app shows venues Recommended by Foursquare around Fueled NY office, does all things requested in the test:
+
 1. Long press a restaurant to block it from appearing again among recommended venues
 2. Reviews
 3. Restaurant bookmarking
