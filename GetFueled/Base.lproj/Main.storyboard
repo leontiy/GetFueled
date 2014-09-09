@@ -391,7 +391,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrr-vL-8Mo">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="352"/>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                 <color key="textColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -401,8 +401,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xrr-vL-8Mo" firstAttribute="leading" secondItem="Raz-9M-clT" secondAttribute="leading" id="FB8-z5-ncU"/>
+                            <constraint firstAttribute="bottom" secondItem="Xrr-vL-8Mo" secondAttribute="bottom" constant="216" id="MwN-QJ-dKg"/>
                             <constraint firstItem="Xrr-vL-8Mo" firstAttribute="top" secondItem="Raz-9M-clT" secondAttribute="top" id="QKG-x9-fSn"/>
-                            <constraint firstItem="lhf-y6-2TQ" firstAttribute="top" secondItem="Xrr-vL-8Mo" secondAttribute="bottom" id="Qgn-r7-9NX"/>
                             <constraint firstAttribute="trailing" secondItem="Xrr-vL-8Mo" secondAttribute="trailing" id="foj-Lb-jz7"/>
                         </constraints>
                     </view>
