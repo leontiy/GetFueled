@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A343f" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Checkin" syncable="YES">
-        <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
-        <relationship name="venue" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="checkins" inverseEntity="Venue" syncable="YES"/>
-    </entity>
     <entity name="CustomReview" representedClassName="CustomReview" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="customReview" inverseEntity="Venue" syncable="YES"/>
@@ -15,6 +11,7 @@
     <entity name="Venue" representedClassName="Venue" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="blacklisted" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="dateSaved" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -29,7 +26,6 @@
         <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="websiteUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VenueCategory" inverseName="venues" inverseEntity="VenueCategory" syncable="YES"/>
-        <relationship name="checkins" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Checkin" inverseName="venue" inverseEntity="Checkin" syncable="YES"/>
         <relationship name="customReview" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CustomReview" inverseName="venue" inverseEntity="CustomReview" syncable="YES"/>
         <relationship name="recommendedItem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RecommendedItem" inverseName="venue" inverseEntity="RecommendedItem" syncable="YES"/>
     </entity>
@@ -39,10 +35,9 @@
         <relationship name="venues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Venue" inverseName="categories" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Checkin" positionX="-45" positionY="99" width="128" height="75"/>
         <element name="CustomReview" positionX="-63" positionY="63" width="128" height="75"/>
         <element name="RecommendedItem" positionX="-36" positionY="117" width="128" height="75"/>
-        <element name="Venue" positionX="-63" positionY="-18" width="128" height="330"/>
+        <element name="Venue" positionX="-63" positionY="-18" width="128" height="328"/>
         <element name="VenueCategory" positionX="-18" positionY="153" width="128" height="88"/>
     </elements>
 </model>

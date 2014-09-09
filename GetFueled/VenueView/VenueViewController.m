@@ -11,12 +11,14 @@
 @import MapKit;
 @import CoreImage;
 #import <AFNetworking/AFNetworking.h>
+#import <RestKit/CoreData.h>
 #import "Venue.h"
 #import "VenueCategory.h"
 #import "MKMapUtils.h"
 #import "NSNumber+Foursquare.h"
 #import "CustomReview.h"
 #import "ReviewViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 
 @interface Venue (MKAnnotation) <MKAnnotation>
@@ -33,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *openNowLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addToFavoritesButton;
 
 @end
 
@@ -75,6 +78,15 @@
                                                  // ignore
                                              }];
     [self updateReview];
+    [self updateAddToFavoritesButton];
+}
+
+- (void)updateAddToFavoritesButton {
+    if (self.venue.dateSaved) {
+        [self.addToFavoritesButton setTitle:@"★ Remove from Favorites" forState:UIControlStateNormal];
+    } else {
+        [self.addToFavoritesButton setTitle:@"☆ Add to Favorites" forState:UIControlStateNormal];
+    }
 }
 
 - (void)updateReview {
@@ -97,6 +109,18 @@
 }
 
 - (IBAction)toggleSaved:(id)sender {
+    NSDate *dateSaved = self.venue.dateSaved;
+    if (dateSaved) {
+        self.venue.dateSaved = nil;
+    } else {
+        self.venue.dateSaved = [NSDate date];
+    }
+    BOOL saved = [self.venue.managedObjectContext saveToPersistentStore:nil];
+    if (!saved) {
+        [SVProgressHUD showErrorWithStatus:@"Can't save. :(\n Contact support."];
+    }
+    
+    [self updateAddToFavoritesButton];
 }
 
 - (IBAction)dismissReviewEditor:(UIStoryboardSegue *)segue {

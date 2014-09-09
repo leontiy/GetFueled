@@ -7,6 +7,7 @@
 extern const struct VenueAttributes {
 	__unsafe_unretained NSString *address;
 	__unsafe_unretained NSString *blacklisted;
+	__unsafe_unretained NSString *dateSaved;
 	__unsafe_unretained NSString *id;
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
@@ -24,7 +25,6 @@ extern const struct VenueAttributes {
 
 extern const struct VenueRelationships {
 	__unsafe_unretained NSString *categories;
-	__unsafe_unretained NSString *checkins;
 	__unsafe_unretained NSString *customReview;
 	__unsafe_unretained NSString *recommendedItem;
 } VenueRelationships;
@@ -33,9 +33,9 @@ extern const struct VenueFetchedProperties {
 } VenueFetchedProperties;
 
 @class VenueCategory;
-@class NSManagedObject;
 @class CustomReview;
 @class RecommendedItem;
+
 
 
 
@@ -85,6 +85,16 @@ extern const struct VenueFetchedProperties {
 - (void)setBlacklistedValue:(BOOL)value_;
 
 //- (BOOL)validateBlacklisted:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSDate* dateSaved;
+
+
+
+//- (BOOL)validateDateSaved:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -243,13 +253,6 @@ extern const struct VenueFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSSet *checkins;
-
-- (NSMutableSet*)checkinsSet;
-
-
-
-
 @property (nonatomic, strong) CustomReview *customReview;
 
 //- (BOOL)validateCustomReview:(id*)value_ error:(NSError**)error_;
@@ -274,11 +277,6 @@ extern const struct VenueFetchedProperties {
 - (void)addCategoriesObject:(VenueCategory*)value_;
 - (void)removeCategoriesObject:(VenueCategory*)value_;
 
-- (void)addCheckins:(NSSet*)value_;
-- (void)removeCheckins:(NSSet*)value_;
-- (void)addCheckinsObject:(NSManagedObject*)value_;
-- (void)removeCheckinsObject:(NSManagedObject*)value_;
-
 @end
 
 @interface _Venue (CoreDataGeneratedPrimitiveAccessors)
@@ -295,6 +293,12 @@ extern const struct VenueFetchedProperties {
 
 - (BOOL)primitiveBlacklistedValue;
 - (void)setPrimitiveBlacklistedValue:(BOOL)value_;
+
+
+
+
+- (NSDate*)primitiveDateSaved;
+- (void)setPrimitiveDateSaved:(NSDate*)value;
 
 
 
@@ -392,11 +396,6 @@ extern const struct VenueFetchedProperties {
 
 - (NSMutableSet*)primitiveCategories;
 - (void)setPrimitiveCategories:(NSMutableSet*)value;
-
-
-
-- (NSMutableSet*)primitiveCheckins;
-- (void)setPrimitiveCheckins:(NSMutableSet*)value;
 
 
 
