@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "Venue.h"
 #import "VenueCategory.h"
+#import "NSNumber+Foursquare.h"
 
 
 
@@ -38,33 +39,22 @@
         return;
     }
     
-    static NSString *const kPhotoFormatSpec = @"640x326";
-    NSString *photoUrlString = [NSString stringWithFormat:@"%@%@%@", venue.photoUrlPrefix, kPhotoFormatSpec, venue.photoUrlSuffix];
-    NSURL *photoUrl = [NSURL URLWithString:photoUrlString];
+    NSURL *photoUrl = [NSURL URLWithString:venue.thumbnailUrl];
     [self.photoView setImageWithURL:photoUrl];
     
-    if ([venue.categories count] > 0) {
-        VenueCategory *category = venue.categories.anyObject;
-        self.categoryLabel.text = category.name;
-    }
+    self.categoryLabel.hidden = [venue.categories count] == 0;
+    VenueCategory *category = venue.categories.anyObject;
+    self.categoryLabel.text = category.name;
     
     self.nameLabel.text = venue.name;
     
     self.hoursLabel.hidden = [venue.openNow length] == 0;
     self.hoursLabel.text = venue.openNow;
     
-    NSString *priceTier = [self representationForPriceTier:[venue.priceTier integerValue]];
+    NSString *priceTier = [venue.priceTier gf_priceTierRerepresentationString];
     self.ratingsLabel.text = [NSString stringWithFormat:@"%@  ★ %@", priceTier, venue.rating];
 
     self.addressLabel.text = venue.address;
-}
-
-- (NSString *)representationForPriceTier:(NSInteger)tier {
-    NSMutableString *repr = [NSMutableString stringWithCapacity:tier];
-    for (NSInteger idx = 0; idx < tier; idx++) {
-        [repr appendString:@"$"];
-    }
-    return [repr copy];
 }
 
 - (void)prepareForReuse {

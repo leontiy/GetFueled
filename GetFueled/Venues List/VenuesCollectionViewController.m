@@ -22,7 +22,7 @@
 #import "Insertion.h"
 #import "Deletion.h"
 #import "DTActionSheet.h"
-
+#import "VenueViewController.h"
 
 
 
@@ -49,6 +49,13 @@
     [super viewDidLoad];
     
     [self requestNextPage];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"viewVenue"]) {
+        VenueViewController *vc = segue.destinationViewController;
+        vc.venue = [sender representedObject];
+    }
 }
 
 - (void)requestNextPage {

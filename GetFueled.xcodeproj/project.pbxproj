@@ -11,6 +11,10 @@
 		32A11E5755A0B3558A399ABD /* Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A116B67CC8D69AA2D3015F /* Insertion.m */; };
 		32A11EB67F3FC3B81D058C08 /* Deletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A11262E9249E5A01A0D16E /* Deletion.m */; };
 		3520B2A919BE543C000DA7D6 /* DTActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520B2A819BE543C000DA7D6 /* DTActionSheet.m */; };
+		3520B2AD19BE650F000DA7D6 /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520B2AC19BE650F000DA7D6 /* VenueViewController.m */; };
+		3520B2AF19BE7270000DA7D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3520B2AE19BE7270000DA7D6 /* MapKit.framework */; };
+		3520B2B219BE76AC000DA7D6 /* MKMapUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520B2B119BE76AC000DA7D6 /* MKMapUtils.m */; };
+		3520B2B819BE7B08000DA7D6 /* NSNumber+Foursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520B2B719BE7B08000DA7D6 /* NSNumber+Foursquare.m */; };
 		3524B7AC19BE306700748AA4 /* RequestStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3524B7AB19BE306700748AA4 /* RequestStatusView.xib */; };
 		3524B7AF19BE307E00748AA4 /* RequestStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3524B7AE19BE307E00748AA4 /* RequestStatusView.m */; };
 		3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */; };
@@ -65,6 +69,13 @@
 		32A11EB12888D3D5CF0D7DEE /* Deletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deletion.h; sourceTree = "<group>"; };
 		3520B2A719BE543C000DA7D6 /* DTActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTActionSheet.h; sourceTree = "<group>"; };
 		3520B2A819BE543C000DA7D6 /* DTActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTActionSheet.m; sourceTree = "<group>"; };
+		3520B2AB19BE650F000DA7D6 /* VenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueViewController.h; sourceTree = "<group>"; };
+		3520B2AC19BE650F000DA7D6 /* VenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueViewController.m; sourceTree = "<group>"; };
+		3520B2AE19BE7270000DA7D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3520B2B019BE76AC000DA7D6 /* MKMapUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMapUtils.h; sourceTree = "<group>"; };
+		3520B2B119BE76AC000DA7D6 /* MKMapUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMapUtils.m; sourceTree = "<group>"; };
+		3520B2B619BE7B08000DA7D6 /* NSNumber+Foursquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Foursquare.h"; sourceTree = "<group>"; };
+		3520B2B719BE7B08000DA7D6 /* NSNumber+Foursquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Foursquare.m"; sourceTree = "<group>"; };
 		3524B7AB19BE306700748AA4 /* RequestStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestStatusView.xib; sourceTree = "<group>"; };
 		3524B7AD19BE307E00748AA4 /* RequestStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestStatusView.h; sourceTree = "<group>"; };
 		3524B7AE19BE307E00748AA4 /* RequestStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestStatusView.m; sourceTree = "<group>"; };
@@ -129,6 +140,7 @@
 			files = (
 				359C880E19AE155000E67D29 /* CoreGraphics.framework in Frameworks */,
 				359C881019AE155000E67D29 /* UIKit.framework in Frameworks */,
+				3520B2AF19BE7270000DA7D6 /* MapKit.framework in Frameworks */,
 				359C880C19AE155000E67D29 /* Foundation.framework in Frameworks */,
 				C48904CC9536449DAB3FED81 /* libPods.a in Frameworks */,
 			);
@@ -147,9 +159,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3520B2AA19BE64F9000DA7D6 /* VenueView */ = {
+			isa = PBXGroup;
+			children = (
+				3520B2AB19BE650F000DA7D6 /* VenueViewController.h */,
+				3520B2AC19BE650F000DA7D6 /* VenueViewController.m */,
+			);
+			path = VenueView;
+			sourceTree = "<group>";
+		};
 		3524B7A719BE076000748AA4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3520B2B019BE76AC000DA7D6 /* MKMapUtils.h */,
+				3520B2B119BE76AC000DA7D6 /* MKMapUtils.m */,
 				3520B2A719BE543C000DA7D6 /* DTActionSheet.h */,
 				3520B2A819BE543C000DA7D6 /* DTActionSheet.m */,
 				32A116B67CC8D69AA2D3015F /* Insertion.m */,
@@ -158,6 +181,8 @@
 				32A11EB12888D3D5CF0D7DEE /* Deletion.h */,
 				32A11302E067A47F244F0B9C /* ArrayOperation.m */,
 				32A11D15A9B2B4F0974C8EF4 /* ArrayOperation.h */,
+				3520B2B619BE7B08000DA7D6 /* NSNumber+Foursquare.h */,
+				3520B2B719BE7B08000DA7D6 /* NSNumber+Foursquare.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -234,6 +259,7 @@
 		359C880A19AE155000E67D29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3520B2AE19BE7270000DA7D6 /* MapKit.framework */,
 				359C880B19AE155000E67D29 /* Foundation.framework */,
 				359C880D19AE155000E67D29 /* CoreGraphics.framework */,
 				359C880F19AE155000E67D29 /* UIKit.framework */,
@@ -250,6 +276,7 @@
 				359C884319AE23D800E67D29 /* Networking */,
 				358B57B719B38B0300D1F626 /* Model */,
 				3554B4F619B2393E0075BB74 /* Venues List */,
+				3520B2AA19BE64F9000DA7D6 /* VenueView */,
 				359C881A19AE155000E67D29 /* AppDelegate.h */,
 				359C881B19AE155000E67D29 /* AppDelegate.m */,
 				359C881D19AE155000E67D29 /* Main.storyboard */,
@@ -354,6 +381,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Leonty Deriglazov";
 				TargetAttributes = {
+					359C880719AE155000E67D29 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					359C882819AE155000E67D29 = {
 						TestTargetID = 359C880719AE155000E67D29;
 					};
@@ -464,8 +498,11 @@
 				358B57C219B391F300D1F626 /* Venue.m in Sources */,
 				359C881C19AE155000E67D29 /* AppDelegate.m in Sources */,
 				358B57D319B50CE300D1F626 /* RecommendedItem.m in Sources */,
+				3520B2AD19BE650F000DA7D6 /* VenueViewController.m in Sources */,
+				3520B2B219BE76AC000DA7D6 /* MKMapUtils.m in Sources */,
 				358B57DB19B50CF000D1F626 /* _CustomReview.m in Sources */,
 				359C881819AE155000E67D29 /* main.m in Sources */,
+				3520B2B819BE7B08000DA7D6 /* NSNumber+Foursquare.m in Sources */,
 				358B57D419B50CE300D1F626 /* VenueCategory.m in Sources */,
 				358B57C519B3920100D1F626 /* _Venue.m in Sources */,
 				355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */,

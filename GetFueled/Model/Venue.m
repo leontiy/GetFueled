@@ -10,12 +10,12 @@
 
 @implementation Venue
 
-- (CLLocationCoordinate2D)location {
+- (CLLocationCoordinate2D)coordinate {
     CLLocationCoordinate2D location = CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
     return location;
 }
 
-- (void)setLocation:(CLLocationCoordinate2D)location {
+- (void)setCoordinate:(CLLocationCoordinate2D)location {
     self.latitude = @(location.latitude);
     self.longitude = @(location.longitude);
 }
@@ -41,5 +41,18 @@
         self.photoUrlSuffix = photoUrlSuffixes[0];
     }
 }
+
+- (NSString *)thumbnailUrl {
+    static NSString *const kThumbnailFormatSpec = @"640x326";
+    NSString *photoUrlString = [NSString stringWithFormat:@"%@%@%@", self.photoUrlPrefix, kThumbnailFormatSpec, self.photoUrlSuffix];
+    return photoUrlString;
+}
+
+- (NSString *)backgroundImageUrl {
+    static NSString *const kBgFormatSpec = @"240x240";
+    NSString *photoUrlString = [NSString stringWithFormat:@"%@%@%@", self.photoUrlPrefix, kBgFormatSpec, self.photoUrlSuffix];
+    return photoUrlString;
+}
+
 
 @end

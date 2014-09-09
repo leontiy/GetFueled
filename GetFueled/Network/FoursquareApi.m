@@ -65,6 +65,8 @@ static NSString *const kVenuesExplorePath = @"venues/explore";
                               @"name" : @"name",
                               @"contact.phone" : @"phone",
                               @"location.address" : @"address",
+                              @"location.lat" : @"latitude",
+                              @"location.lng" : @"longitude",
                               @"price.tier" : @"priceTier",
                               @"rating" : @"rating",
                               @"menu.mobileUrl" : @"menuUrl",
