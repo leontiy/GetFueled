@@ -220,7 +220,11 @@ static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
     if (animated) {
         roll();
     } else {
-        [UIView performWithoutAnimation:roll];
+        [UIView beginAnimations:@"No animations" context:nil];
+        [UIView setAnimationsEnabled:NO];
+        roll();
+        [UIView commitAnimations];
+        [UIView setAnimationsEnabled:YES];
     }
 }
 
