@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell appearanceType="aqua" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VenueCell" id="tmj-Oz-PPi" customClass="VenueCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ym5-oU-er9" userLabel="Main Info View">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-M9-rSz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfQ-q6-rjB" userLabel="Category container">
+                                <rect key="frame" x="261" y="15" width="44" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Café" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFY-Y7-BN9" userLabel="Category label">
+                                        <rect key="frame" x="4" y="0.0" width="36" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZFY-Y7-BN9" firstAttribute="leading" secondItem="HfQ-q6-rjB" secondAttribute="leading" constant="4" id="4nb-aY-ST8"/>
+                                    <constraint firstItem="ZFY-Y7-BN9" firstAttribute="top" secondItem="HfQ-q6-rjB" secondAttribute="top" id="RsO-OI-8cN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZFY-Y7-BN9" secondAttribute="trailing" constant="4" id="a8Y-di-AoD"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZFY-Y7-BN9" secondAttribute="bottom" id="jBO-7U-dJr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5Z-as-If9" userLabel="Name container">
+                                <rect key="frame" x="187" y="43" width="118" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Café Gitane" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko8-Z0-CYU" userLabel="Name label">
+                                        <rect key="frame" x="4" y="0.0" width="110" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.68235296010000002" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ko8-Z0-CYU" secondAttribute="trailing" constant="4" id="6bY-q8-xc5"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ko8-Z0-CYU" secondAttribute="bottom" id="VWS-SW-fDK"/>
+                                    <constraint firstItem="Ko8-Z0-CYU" firstAttribute="top" secondItem="g5Z-as-If9" secondAttribute="top" id="p2c-b3-xOO"/>
+                                    <constraint firstItem="Ko8-Z0-CYU" firstAttribute="leading" secondItem="g5Z-as-If9" secondAttribute="leading" constant="4" id="zXl-rT-eXS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbZ-Ip-5wU" userLabel="Ratings container">
+                                <rect key="frame" x="223" y="80" width="82" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="$$  ★ 9.2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shj-ss-hLo" userLabel="Ratings label">
+                                        <rect key="frame" x="4" y="0.0" width="74" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="shj-ss-hLo" secondAttribute="bottom" id="Af7-vm-dx6"/>
+                                    <constraint firstItem="shj-ss-hLo" firstAttribute="top" secondItem="DbZ-Ip-5wU" secondAttribute="top" id="AoT-gt-hNp"/>
+                                    <constraint firstItem="shj-ss-hLo" firstAttribute="leading" secondItem="DbZ-Ip-5wU" secondAttribute="leading" constant="4" id="QKN-vO-1Ml"/>
+                                    <constraint firstAttribute="trailing" secondItem="shj-ss-hLo" secondAttribute="trailing" constant="4" id="fdc-ET-sdO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhf-PI-gQP" userLabel="Address container">
+                                <rect key="frame" x="207" y="104" width="98" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="242 Mott St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlA-yA-7BJ" userLabel="Address label">
+                                        <rect key="frame" x="4" y="0.0" width="90" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qlA-yA-7BJ" secondAttribute="trailing" constant="4" id="7aL-eI-OUg"/>
+                                    <constraint firstItem="qlA-yA-7BJ" firstAttribute="leading" secondItem="Bhf-PI-gQP" secondAttribute="leading" constant="4" id="Gov-ds-NiU"/>
+                                    <constraint firstItem="qlA-yA-7BJ" firstAttribute="top" secondItem="Bhf-PI-gQP" secondAttribute="top" id="WKU-be-xfe"/>
+                                    <constraint firstAttribute="bottom" secondItem="qlA-yA-7BJ" secondAttribute="bottom" id="jav-XD-usU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gB-RX-nxH" userLabel="Open until ">
+                                <rect key="frame" x="147" y="128" width="158" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Open until 11:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-8i-OPS" userLabel="Open until label">
+                                        <rect key="frame" x="4" y="0.0" width="150" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hVf-8i-OPS" firstAttribute="leading" secondItem="0gB-RX-nxH" secondAttribute="leading" constant="4" id="MS6-9W-Md8"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVf-8i-OPS" secondAttribute="trailing" constant="4" id="Ogv-nD-Wug"/>
+                                    <constraint firstAttribute="bottom" secondItem="hVf-8i-OPS" secondAttribute="bottom" id="qMx-Ui-EA7"/>
+                                    <constraint firstItem="hVf-8i-OPS" firstAttribute="top" secondItem="0gB-RX-nxH" secondAttribute="top" id="zyM-rS-D6q"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1jn-M9-rSz" firstAttribute="leading" secondItem="Ym5-oU-er9" secondAttribute="leading" id="6TL-ao-yVZ"/>
+                            <constraint firstItem="0gB-RX-nxH" firstAttribute="top" secondItem="Bhf-PI-gQP" secondAttribute="bottom" constant="4" id="8dh-OH-rwt"/>
+                            <constraint firstAttribute="trailing" secondItem="g5Z-as-If9" secondAttribute="trailing" constant="15" id="GCT-6N-6Yr"/>
+                            <constraint firstItem="g5Z-as-If9" firstAttribute="trailing" secondItem="0gB-RX-nxH" secondAttribute="trailing" id="HRy-ZC-JiN"/>
+                            <constraint firstAttribute="trailing" secondItem="1jn-M9-rSz" secondAttribute="trailing" id="NcJ-L8-4vS"/>
+                            <constraint firstItem="Bhf-PI-gQP" firstAttribute="top" secondItem="DbZ-Ip-5wU" secondAttribute="bottom" constant="4" id="PUO-g7-eTf"/>
+                            <constraint firstItem="0gB-RX-nxH" firstAttribute="trailing" secondItem="Bhf-PI-gQP" secondAttribute="trailing" id="VCV-Jk-tcZ"/>
+                            <constraint firstItem="g5Z-as-If9" firstAttribute="trailing" secondItem="HfQ-q6-rjB" secondAttribute="trailing" id="XT3-Ge-55D"/>
+                            <constraint firstItem="DbZ-Ip-5wU" firstAttribute="top" secondItem="g5Z-as-If9" secondAttribute="bottom" constant="8" id="cOq-70-eA4"/>
+                            <constraint firstItem="g5Z-as-If9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ym5-oU-er9" secondAttribute="leading" constant="15" id="dA0-ce-x4x"/>
+                            <constraint firstItem="1jn-M9-rSz" firstAttribute="top" secondItem="Ym5-oU-er9" secondAttribute="top" id="eMj-6Y-Fdv"/>
+                            <constraint firstItem="g5Z-as-If9" firstAttribute="top" secondItem="HfQ-q6-rjB" secondAttribute="bottom" constant="8" id="f31-UC-5gF"/>
+                            <constraint firstItem="HfQ-q6-rjB" firstAttribute="top" secondItem="Ym5-oU-er9" secondAttribute="top" constant="15" id="pZh-c9-WQt"/>
+                            <constraint firstAttribute="bottom" secondItem="1jn-M9-rSz" secondAttribute="bottom" id="rPm-sE-9nR"/>
+                            <constraint firstItem="DbZ-Ip-5wU" firstAttribute="trailing" secondItem="0gB-RX-nxH" secondAttribute="trailing" id="xOL-eY-zdj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="Ym5-oU-er9" firstAttribute="top" secondItem="tmj-Oz-PPi" secondAttribute="top" id="0sq-cd-0TM"/>
+                <constraint firstItem="Ym5-oU-er9" firstAttribute="leading" secondItem="tmj-Oz-PPi" secondAttribute="leading" id="53S-u9-ba8"/>
+                <constraint firstAttribute="bottom" secondItem="Ym5-oU-er9" secondAttribute="bottom" id="a1M-EW-RUU"/>
+                <constraint firstAttribute="trailing" secondItem="Ym5-oU-er9" secondAttribute="trailing" id="iuZ-w7-FoR"/>
+            </constraints>
+            <connections>
+                <outlet property="addressLabel" destination="qlA-yA-7BJ" id="Gna-xl-Bdz"/>
+                <outlet property="categoryLabel" destination="ZFY-Y7-BN9" id="LY2-IF-2SE"/>
+                <outlet property="hoursLabel" destination="hVf-8i-OPS" id="mgK-PC-h22"/>
+                <outlet property="nameLabel" destination="Ko8-Z0-CYU" id="x1x-bf-q5K"/>
+                <outlet property="photoView" destination="1jn-M9-rSz" id="8Qc-uQ-L1S"/>
+                <outlet property="ratingsLabel" destination="shj-ss-hLo" id="vsj-q8-QAM"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

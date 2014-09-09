@@ -31,6 +31,7 @@
 		358B57DB19B50CF000D1F626 /* _CustomReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D619B50CF000D1F626 /* _CustomReview.m */; };
 		358B57DC19B50CF000D1F626 /* _RecommendedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57D819B50CF000D1F626 /* _RecommendedItem.m */; };
 		358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57DA19B50CF000D1F626 /* _VenueCategory.m */; };
+		35983D7119BEB40000625F0A /* VenueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35983D7019BEB40000625F0A /* VenueCollectionViewCell.xib */; };
 		359C880C19AE155000E67D29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880B19AE155000E67D29 /* Foundation.framework */; };
 		359C880E19AE155000E67D29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880D19AE155000E67D29 /* CoreGraphics.framework */; };
 		359C881019AE155000E67D29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C880F19AE155000E67D29 /* UIKit.framework */; };
@@ -106,6 +107,7 @@
 		358B57D819B50CF000D1F626 /* _RecommendedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RecommendedItem.m; sourceTree = "<group>"; };
 		358B57D919B50CF000D1F626 /* _VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _VenueCategory.h; sourceTree = "<group>"; };
 		358B57DA19B50CF000D1F626 /* _VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _VenueCategory.m; sourceTree = "<group>"; };
+		35983D7019BEB40000625F0A /* VenueCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCollectionViewCell.xib; sourceTree = "<group>"; };
 		359C880819AE155000E67D29 /* GetFueled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetFueled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359C880B19AE155000E67D29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359C880D19AE155000E67D29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -195,6 +197,7 @@
 			children = (
 				3554B4F719B239930075BB74 /* VenueCollectionViewCell.h */,
 				3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */,
+				35983D7019BEB40000625F0A /* VenueCollectionViewCell.xib */,
 				35722E0C19B9CC3100506522 /* VenuesCollectionViewController.h */,
 				35722E0D19B9CC3100506522 /* VenuesCollectionViewController.m */,
 				355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */,
@@ -432,6 +435,7 @@
 			files = (
 				359C882419AE155000E67D29 /* Images.xcassets in Resources */,
 				3524B7AC19BE306700748AA4 /* RequestStatusView.xib in Resources */,
+				35983D7119BEB40000625F0A /* VenueCollectionViewCell.xib in Resources */,
 				359C881619AE155000E67D29 /* InfoPlist.strings in Resources */,
 				359C881F19AE155000E67D29 /* Main.storyboard in Resources */,
 				355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */,

@@ -25,6 +25,8 @@
 #import "VenueViewController.h"
 
 
+static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
+
 
 @interface VenuesCollectionViewController () <NSFetchedResultsControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -48,11 +50,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.collectionView registerNib:[UINib nibWithNibName:@"VenueCollectionViewCell" bundle:nil]
+          forCellWithReuseIdentifier:kVenueCellReuseIdentifier];
     [self requestNextPage];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"viewVenue"]) {
+    if ([segue.identifier isEqualToString:@"showVenue"]) {
         VenueViewController *vc = segue.destinationViewController;
         vc.venue = [sender representedObject];
     }
@@ -222,7 +226,8 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    VenueCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VenueCell" forIndexPath:indexPath];
+    VenueCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kVenueCellReuseIdentifier
+                                                                              forIndexPath:indexPath];
     cell.representedObject = [self.dataController.fetchedObjects[indexPath.row] venue];
     if (indexPath.row == [self.dataController.fetchedObjects count] - 1) {
         [self requestNextPage];
@@ -233,6 +238,10 @@
     cell.longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(venueOptions:)];
     [cell addGestureRecognizer:cell.longPressRecognizer];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showVenue" sender:[collectionView cellForItemAtIndexPath:indexPath]];
 }
 
 #pragma mark -
