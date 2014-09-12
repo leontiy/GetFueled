@@ -164,6 +164,7 @@ static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
     UIEdgeInsets inset = self.collectionView.contentInset;
     inset.bottom = requestStatusViewHeight;
     self.collectionView.contentInset = inset;
+    view.autoresizingMask = UIViewAutoresizingNone;
     self.currentBottomView = view;
     [self.view setNeedsLayout];
     return view;
