@@ -20,6 +20,7 @@
 		3554B4F919B239930075BB74 /* VenueCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3554B4F819B239930075BB74 /* VenueCollectionViewCell.m */; };
 		355EA44519BA194D000A3F0E /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */; };
 		355EA44819BA1AD3000A3F0E /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */; };
+		356D6FEA19C39E90003D6F24 /* BouncyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 356D6FE919C39E90003D6F24 /* BouncyButton.m */; };
 		35722E0E19B9CC3100506522 /* VenuesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35722E0D19B9CC3100506522 /* VenuesCollectionViewController.m */; };
 		358B57BF19B390F300D1F626 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 358B57BD19B390F300D1F626 /* Model.xcdatamodeld */; };
 		358B57C219B391F300D1F626 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 358B57C119B391F300D1F626 /* Venue.m */; };
@@ -90,6 +91,8 @@
 		355EA44419BA194D000A3F0E /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
 		355EA44619BA1AD3000A3F0E /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
 		355EA44719BA1AD3000A3F0E /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
+		356D6FE819C39E90003D6F24 /* BouncyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BouncyButton.h; sourceTree = "<group>"; };
+		356D6FE919C39E90003D6F24 /* BouncyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncyButton.m; sourceTree = "<group>"; };
 		35722E0C19B9CC3100506522 /* VenuesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesCollectionViewController.h; sourceTree = "<group>"; };
 		35722E0D19B9CC3100506522 /* VenuesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesCollectionViewController.m; sourceTree = "<group>"; };
 		358B57BE19B390F300D1F626 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 			children = (
 				3520B2AB19BE650F000DA7D6 /* VenueViewController.h */,
 				3520B2AC19BE650F000DA7D6 /* VenueViewController.m */,
+				356D6FE819C39E90003D6F24 /* BouncyButton.h */,
+				356D6FE919C39E90003D6F24 /* BouncyButton.m */,
 			);
 			path = VenueView;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				358B57DD19B50CF000D1F626 /* _VenueCategory.m in Sources */,
 				358B57D219B50CE300D1F626 /* CustomReview.m in Sources */,
 				358EC80C19BEE26200E66B8F /* AppearanceCustomization.m in Sources */,
+				356D6FEA19C39E90003D6F24 /* BouncyButton.m in Sources */,
 				3524B7AF19BE307E00748AA4 /* RequestStatusView.m in Sources */,
 				359C882219AE155000E67D29 /* ViewController.m in Sources */,
 				35722E0E19B9CC3100506522 /* VenuesCollectionViewController.m in Sources */,

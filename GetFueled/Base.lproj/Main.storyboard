@@ -169,7 +169,7 @@
                                                         <color key="shadowColor" red="0.086274512110000007" green="0.086274512110000007" blue="0.086274512110000007" alpha="0.13" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGr-EM-J7C">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGr-EM-J7C" customClass="BouncyButton">
                                                         <rect key="frame" x="15" y="316" width="290" height="44"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <constraints>
@@ -189,7 +189,7 @@
                                                             <action selector="call:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="VNl-1W-OiT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-dW-iIU">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-dW-iIU" customClass="BouncyButton">
                                                         <rect key="frame" x="15" y="368" width="290" height="44"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -206,7 +206,7 @@
                                                             <action selector="openMenu:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="Mlv-UD-rbe"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlP-kf-fOV">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlP-kf-fOV" customClass="BouncyButton">
                                                         <rect key="frame" x="15" y="420" width="290" height="44"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -223,7 +223,7 @@
                                                             <action selector="openWebsite:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="rnS-Y1-yDT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-Od-CLc">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-Od-CLc" customClass="BouncyButton">
                                                         <rect key="frame" x="15" y="472" width="290" height="44"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -240,7 +240,7 @@
                                                             <action selector="toggleSaved:" destination="Ktn-E0-dCe" eventType="touchUpInside" id="yn1-TA-b53"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-MI-43d">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-MI-43d" customClass="BouncyButton">
                                                         <rect key="frame" x="15" y="524" width="290" height="44"/>
                                                         <color key="backgroundColor" red="0.51176470519999995" green="0.68235296010000002" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="deviceRGB"/>
                                                         <size key="titleShadowOffset" width="0.0" height="1"/>
