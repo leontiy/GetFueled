@@ -37,6 +37,9 @@
     [self.textBoxes enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.frame].CGPath;
     }];
+    
+    self.contentView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+    self.contentView.layer.shouldRasterize = YES;
 }
 
 - (void)setRepresentedObject:(Venue *)representedObject {
