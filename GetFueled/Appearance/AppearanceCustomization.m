@@ -14,8 +14,7 @@
 @implementation AppearanceCustomization
 
 + (instancetype)new {
-    float v = floor(NSFoundationVersionNumber);
-    if (v <= NSFoundationVersionNumber_iOS_6_1) {
+    if (GF_SYSTEM_VERSION_LESS_THAN(@"7.0")) {
         return [[AppearanceCustomization_iOS6 alloc] init];
     } else {
         return [[AppearanceCustomization alloc] init];
@@ -74,13 +73,9 @@
     UINavigationBar *appearance = [UINavigationBar appearance];
     [appearance setTintColor:[UIColor colorWithWhite:0.086 alpha:0.9]];
     
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [[AppearanceCustomization jumboGreyColor] colorWithAlphaComponent:0.5];
-    shadow.shadowOffset = CGSizeMake(0, 1);
     appearance.titleTextAttributes = @{
-                                       NSFontAttributeName : [UIFont fontWithName:@"UnitedSansSemiCond-Bold" size:24],
-                                       NSForegroundColorAttributeName : [AppearanceCustomization antiFlashWhiteColor],
-                                       NSShadowAttributeName : shadow,
+                                       UITextAttributeFont : [UIFont fontWithName:@"UnitedSansSemiCond-Bold" size:24],
+                                       UITextAttributeTextColor : [AppearanceCustomization antiFlashWhiteColor],
                                        };
 }
 
