@@ -14,7 +14,7 @@
 @implementation AppearanceCustomization
 
 + (instancetype)new {
-    if (GF_SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+    if (GF_SYSTEM_VERSION_LESS_THAN(7.0)) {
         return [[AppearanceCustomization_iOS6 alloc] init];
     } else {
         return [[AppearanceCustomization alloc] init];

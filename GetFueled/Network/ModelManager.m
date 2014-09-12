@@ -112,7 +112,7 @@ static NSInteger kPageSize = 10;
         self.totalResults = [result[@"totalResults"] integerValue];
         NSArray *venueIds = result[@"venueIds"];
         NSManagedObjectContext *updateContext;
-        if (GF_SYSTEM_VERSION_LESS_THAN(@"7.0")) { // fixes random crash with background processing of deletions
+        if (GF_SYSTEM_VERSION_LESS_THAN(7.0)) { // fixes random crash with background processing of deletions
             updateContext = self.mainContext;
         } else {
             updateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
