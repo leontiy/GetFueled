@@ -45,5 +45,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIViewGroupOpacity</key>
+	<true/>
 </dict>
 </plist>

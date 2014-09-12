@@ -56,6 +56,17 @@ static NSString *const kVenueCellReuseIdentifier = @"VenueCell";
     [self requestNextPage];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSArray *selectedIndexPaths = [self.collectionView indexPathsForSelectedItems];
+    if ([selectedIndexPaths count] > 0) {
+        [selectedIndexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
+            [self.collectionView deselectItemAtIndexPath:indexPath animated:animated];
+        }];
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showVenue"]) {
         VenueViewController *vc = segue.destinationViewController;

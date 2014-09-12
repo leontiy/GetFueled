@@ -72,4 +72,14 @@
     self.representedObject = nil;
 }
 
+static const CGFloat kSelectedHighlightedAlpha = 0.5;
+
+- (void)setSelected:(BOOL)selected {
+    self.contentView.alpha = selected || self.highlighted ? kSelectedHighlightedAlpha : 1;
+}
+
+- (void)setHighlighted:(BOOL)highlighted {
+    self.contentView.alpha = self.selected || highlighted ? kSelectedHighlightedAlpha : 1;
+}
+
 @end
